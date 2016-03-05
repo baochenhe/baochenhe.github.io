@@ -16,7 +16,7 @@
 <meta property="og:description" content="前言最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这">
 <meta property="og:image" content="http://7xnqm4.com1.z0.glb.clouddn.com/Android%E4%B8%ADMVP%E7%9A%84%E4%BD%BF%E7%94%A8%C2%8F%C2%9B.png">
 <meta property="og:image" content="http://img.blog.csdn.net/20150622212916054">
-<meta property="og:updated_time" content="2016-02-19T06:30:23.000Z">
+<meta property="og:updated_time" content="2016-03-05T07:15:02.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVP in Android 整理">
 <meta name="twitter:description" content="前言最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这">
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 10px;">roobo</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
   
     <div class="article-meta">
       <a href="/2016/02/19/Android-mvp/" class="article-date">
-  	<time datetime="2016-02-19T06:30:23.000Z" itemprop="datePublished">2016-02-19</time>
+  	<time datetime="2016-02-19T05:50:30.000Z" itemprop="datePublished">2016-02-19</time>
 </a>
     </div>
   
@@ -290,7 +290,8 @@ var _hmt = _hmt || [];
 </ul>
 <p>看起来的确像那么回事，但是细细的想想这个View对应于布局文件，其实能做的事情特别少，实际上关于该布局文件中的数据绑定的操作，事件处理的代码都在Activity中，造成了Activity既像View又像Controller（当然了Data-Binder的出现，可能会让View更像View吧）。这可能也就是为何，在<a href="https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android" target="_blank" rel="external">该文</a>中有一句这样的话：</p>
 <pre><code>Most of the modern Android applications just use View-Model architecture，everything is connected with Activity.
-</code></pre><h3 id="什么是-MVP"><a href="#什么是-MVP" class="headerlink" title="什么是 MVP"></a>什么是 MVP</h3><p>MVP是模型（Model）、视图（View）、主持人（Presenter）的缩写，分别代表项目中3个不同的模块。</p>
+</code></pre><a id="more"></a>
+<h3 id="什么是-MVP"><a href="#什么是-MVP" class="headerlink" title="什么是 MVP"></a>什么是 MVP</h3><p>MVP是模型（Model）、视图（View）、主持人（Presenter）的缩写，分别代表项目中3个不同的模块。</p>
 <p>模型（Model）：负责处理数据的加载或者存储，比如从网络或本地数据库获取数据等；</p>
 <p>视图（View）：负责界面数据的展示，与用户进行交互；</p>
 <p>主持人（Presenter）：相当于协调者，是模型与视图之间的桥梁，将模型与视图分离开来。</p>
@@ -316,6 +317,15 @@ var _hmt = _hmt || [];
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/03/05/随笔-My-New-journey/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          My new journey roobo 智能管家
+        
+      </div>
+    </a>
   
   
     <a href="/2016/02/04/DesignPattern-mvc-mvp-mvvm/" id="article-nav-older" class="article-nav-link-wrap">
