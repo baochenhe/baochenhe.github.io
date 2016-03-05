@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 10px;">roobo</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -239,6 +239,65 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-zip-zip-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/05/zip-zip-1/" class="article-date">
+  	<time datetime="2016-03-05T07:23:00.000Z" itemprop="datePublished">2016-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/05/zip-zip-1/">一个关于zip压缩错误的认识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="An-incredible-mistake"><a href="#An-incredible-mistake" class="headerlink" title="An incredible mistake"></a>An incredible mistake</h2><p>一个令人难以置信的错误。这不是这个错误的产生结果和缘由我无法理解，而是我无法理解他们为什么会如此不小心。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">03</span>-<span class="number">04</span> <span class="number">17</span>:<span class="number">41</span>:<span class="number">55.944</span> <span class="number">26746</span>-<span class="number">26756</span>/com.xx.xxx E/StrictMode: A resource was acquired at attached stack trace but never released. See java.io.Closeable <span class="keyword">for</span> information on avoiding resource leaks.</span><br><span class="line">                                                                 java.lang.Throwable: Explicit termination method <span class="string">'end'</span> not called</span><br><span class="line">                                                                     at dalvik.system.CloseGuard.open(CloseGuard.java:<span class="number">184</span>)</span><br><span class="line">                                                                     at java.util.zip.Deflater.&lt;init&gt;(Deflater.java:<span class="number">192</span>)</span><br><span class="line">                                                                     at java.util.zip.Deflater.&lt;init&gt;(Deflater.java:<span class="number">165</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.io.DeflaterOutputStream.&lt;init&gt;(DeflaterOutputStream.java:<span class="number">38</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.io.ZipOutputStream.&lt;init&gt;(ZipOutputStream.java:<span class="number">15</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.zip.ZipEngine.initAddFiles(ZipEngine.java:<span class="number">114</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.zip.ZipEngine.addFiles(ZipEngine.java:<span class="number">85</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.zip.ZipEngine.addFolderToZip(ZipEngine.java:<span class="number">297</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.core.ZipFile.addFolder(ZipFile.java:<span class="number">356</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.core.ZipFile.addFolder(ZipFile.java:<span class="number">330</span>)</span><br><span class="line">                                                                     at net.lingala.zip4j.core.ZipFile.addFolder(ZipFile.java:<span class="number">309</span>)</span><br><span class="line">                                                                     at com.xx.xxx.util.ZipUtils.zipDir(ZipUtils.java:<span class="number">33</span>)</span><br><span class="line">                                                                     at com.xx.xxx.service.LogUtil.zipLog(LogUtil.java:<span class="number">200</span>)</span><br><span class="line">                                                                     at com.juan.logmanager.service.LogUtil.uploadLog(LogUtil.java:<span class="number">74</span>)</span><br><span class="line">                                                                     at com.xx.xxx.service.LogService$UploadRunnable.run(LogService.java:<span class="number">200</span>)</span><br><span class="line">                                                                     at java.lang.Thread.run(Thread.java:<span class="number">841</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/roobo/">roobo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zip/">zip</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/05/zip-zip-1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-随笔-My-New-journey" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -779,65 +838,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/02/03/RxJava-RxJava-2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-RxJava-RxJava-1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/03/RxJava-RxJava-1/" class="article-date">
-  	<time datetime="2016-02-03T03:24:25.000Z" itemprop="datePublished">2016-02-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/03/RxJava-RxJava-1/">深入浅出RxJava（一：基础篇）(译)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong><a href="https://github.com/ReactiveX/RxJava">RxJava</a></strong>正在Android开发者中变的越来越流行。唯一的问题就是上手不容易，尤其是大部分人之前都是使用命令式编程语言。但是一旦你弄明白了，你就会发现RxJava真是太棒了。<br>这里仅仅是帮助你了解RxJava，整个系列共有四篇文章，希望你看完这四篇文章之后能够了解RxJava背后的思想，并且喜欢上RxJava。</p>
-<p><a href="http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/">英文原文链接 </a></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译/">译</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/03/RxJava-RxJava-1/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
