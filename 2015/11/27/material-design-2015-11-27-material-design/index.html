@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+ 
+  <title>Android(Lollipop/5.0) Material Design(一) 简介 | 无敌包哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="查看官网地址：https://developer.android.com/design/material/index.html使用Material Design 需要api21，即Lollipop/5.0以上Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api
+Material 主题在manifest.xml 中&amp;lt;...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android(Lollipop/5.0) Material Design(一) 简介">
+<meta property="og:url" content="http://wdbaoge.com/2015/11/27/material-design-2015-11-27-material-design/index.html">
+<meta property="og:site_name" content="无敌包哥">
+<meta property="og:description" content="查看官网地址：https://developer.android.com/design/material/index.html使用Material Design 需要api21，即Lollipop/5.0以上Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api
+Material 主题在manifest.xml 中&amp;lt;...">
+<meta property="og:image" content="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20150706103638016?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201507/06/1436150967_3066.gif">
+<meta property="og:updated_time" content="2015-11-30T14:57:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android(Lollipop/5.0) Material Design(一) 简介">
+<meta name="twitter:description" content="查看官网地址：https://developer.android.com/design/material/index.html使用Material Design 需要api21，即Lollipop/5.0以上Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api
+Material 主题在manifest.xml 中&amp;lt;...">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+  
+    <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?051d6e710ef374003eec68a5ee0e36d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- End Baidu Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+ 
+</div>
+
+	
+
+
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/myicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">无敌包哥</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/游戏">游戏</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">Hongyang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/singwhatiwanna">任玉刚</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lzyzsd">大头鬼Bruce</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://liuling123.com/">Lauren</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/weiyirong">Ronys</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiaoduanguoguo.com/">小段果果</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.eagleweb.xyz/">菜鹰帅帅</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://i.ui.cn/ucenter/40090">zldesign世界级设计师</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://kumayi.com/">酷蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mumayi.com">木蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://bbs.mumayi.com/">木蚂蚁手机乐园</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">少壮不努力，老大写程序。 我就是我，写程序滴小伙儿。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">无敌包哥</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/myicon.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">无敌包哥</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/游戏">游戏</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-material-design-2015-11-27-material-design" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/27/material-design-2015-11-27-material-design/" class="article-date">
+  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">2015-11-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android(Lollipop/5.0) Material Design(一) 简介
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>查看官网地址：<a href="https://developer.android.com/design/material/index.html" title="android Material Design官网地址" target="_blank" rel="external">https://developer.android.com/design/material/index.html</a><br>使用Material Design 需要api21，即Lollipop/5.0以上<br>Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api</p>
+<h2 id="Material-主题"><a href="#Material-主题" class="headerlink" title="Material 主题"></a>Material 主题</h2><p>在manifest.xml 中<br><code>&lt;... android:theme=&quot;@android:style/Theme.Material&quot; &gt;</code><br><strong>提示一下有很多相关的主题</strong></p>
+<p><img src="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="使用主题示例"></p>
+<a id="more"></a>
+<h2 id="Lists和Cards"><a href="#Lists和Cards" class="headerlink" title="Lists和Cards"></a>Lists和Cards</h2><p>5.0提供了两个新的Widget，它们使用了Material Design 的style和animation：<br><strong>RecyclerView</strong> 一个更可插拔式的ListView，它支持不同的布局类型，并且性能有了改进列表式。<br><strong>CardView</strong> 一个能让你在其内显示重要信息，并保持连贯的视觉和感觉的卡片  卡片式<br>它两位于<br><em>sdk/extras/android/support/v7/cardview 和 sdk/extras/android/support/v7/RecyclerView</em></p>
+<p><img src="http://img.blog.csdn.net/20150706103638016?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="lists and cards"></p>
+<h2 id="View的阴影"><a href="#View的阴影" class="headerlink" title="View的阴影"></a>View的阴影</h2><p>  View现在除了x、y属性外还有z，z代表一个view的仰角(elevation, 姑且这么翻译吧)<br>  z越大，阴影越大；z越大，view会出现在其他view的顶部</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>新的动画Api，让你在UI控件里能创建触摸反馈，改变View的状态，切换activity的一系列自定义动画<br>具体有：<br>    响应View的touch事件的触摸反馈动画<br>    隐藏和显示View的循环展示动画<br>    两个Activity间的切换动画<br>    更自然的曲线运动的动画<br>    使用View的状态更改动画，能改变一个或多个View的属性<br>在View的状态更改时显示状态列表动画<br>   这些new animations Api，已内置在标准Widget中，如Button。在自定义view时也可使用这些api</p>
+<p><img src="http://img.my.csdn.net/uploads/201507/06/1436150967_3066.gif" alt="动画"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>可伸缩的矢量图片不会丢失清晰度，并且单一颜色的app-icon是完美的<br>可定义一个bitmap作为透明度(alpha)和运行时的颜色<br>可对一个bitmap image取色，会取出它比较显眼的颜色</p>
+<p><strong>RecyclerView的例子</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.widget.GridLayoutManager;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.widget.RecyclerView;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.widget.RecyclerView.LayoutParams;</span><br><span class="line"><span class="keyword">import</span> android.view.LayoutInflater;</span><br><span class="line"><span class="keyword">import</span> android.view.ViewGroup;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecyclerViewActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">	<span class="comment">/*</span><br><span class="line">	 * recyclerview提供这些内置的布局管理器： </span><br><span class="line">	 * linearlayoutmanager				显示垂直滚动列表或水平的项目。</span><br><span class="line">	 * gridlayoutmanager				显示在一个网格项目。 </span><br><span class="line">	 * staggeredgridlayoutmanager		显示在交错网格项目。</span><br><span class="line">	 * 自定义的布局管理器，需要继承recyclerview.layoutmanager类。</span><br><span class="line">	 * </span><br><span class="line">	 * add/remove items时的动画是默认启用的。</span><br><span class="line">	 * 自定义这些动画需要继承RecyclerView.ItemAnimator，并实现RecyclerView.setItemAnimator()</span><br><span class="line">	 */</span></span><br><span class="line">	 <span class="keyword">private</span> RecyclerView mRecyclerView;</span><br><span class="line">	 <span class="keyword">private</span> RecyclerView.Adapter mAdapter;</span><br><span class="line">	 <span class="keyword">private</span> RecyclerView.LayoutManager mLayoutManager;</span><br><span class="line">	 <span class="keyword">private</span> String[] myDataset;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		</span><br><span class="line">		setContentView(R.layout.recycler_view);</span><br><span class="line">        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// use this setting to improve performance if you know that changes</span></span><br><span class="line">        <span class="comment">// in content do not change the layout size of the RecyclerView</span></span><br><span class="line">        mRecyclerView.setHasFixedSize(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// use a linear layout manager</span></span><br><span class="line"><span class="comment">//        mLayoutManager = new LinearLayoutManager(this);</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//        mLayoutManager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, true);</span></span><br><span class="line">        <span class="comment">//true 表示，将layout内容反转</span></span><br><span class="line">        mLayoutManager = <span class="keyword">new</span> GridLayoutManager(<span class="keyword">this</span>, <span class="number">3</span>, GridLayoutManager.VERTICAL, <span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//HORIZONTAL 横向滚动显示内容	VERTICAL纵向</span></span><br><span class="line"><span class="comment">//        mLayoutManager = new GridLayoutManager(this, 3, GridLayoutManager.HORIZONTAL, false);</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//方向也是指示滚动方向，例子中横向开头的数据交错了一点， 纵向的无交错</span></span><br><span class="line"><span class="comment">//        mLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL);</span></span><br><span class="line"><span class="comment">//        mLayoutManager = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);</span></span><br><span class="line">        </span><br><span class="line">        mRecyclerView.setLayoutManager(mLayoutManager);</span><br><span class="line"><span class="comment">//        mRecyclerView.setLayoutManager(new MyLayoutMnager()); //数据不显示，可能还需要重写什么东西。。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// specify an adapter (see also next example)</span></span><br><span class="line">      </span><br><span class="line">        setDatas();</span><br><span class="line">        mAdapter = <span class="keyword">new</span> MyAdapter(myDataset);</span><br><span class="line">        mRecyclerView.setAdapter(mAdapter);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDatas</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">200</span>;</span><br><span class="line">        myDataset = <span class="keyword">new</span> String[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        	<span class="keyword">switch</span> (i%<span class="number">3</span>) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">				myDataset[i] = <span class="string">"中国"</span> + i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				myDataset[i] = <span class="string">"美国"</span> + i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				myDataset[i] = <span class="string">"澳大利亚"</span> + i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">MyLayoutMnager</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">LayoutManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> LayoutParams <span class="title">generateDefaultLayoutParams</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			LayoutParams params = <span class="keyword">new</span> LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);</span><br><span class="line">			params.topMargin = <span class="number">5</span>;</span><br><span class="line">			<span class="keyword">return</span> params;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">MyAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">ViewHolder</span>&gt; </span>&#123;</span><br><span class="line">	    <span class="keyword">private</span> String[] mDataset;</span><br><span class="line"></span><br><span class="line">	    <span class="comment">// Provide a reference to the views for each data item</span></span><br><span class="line">	    <span class="comment">// Complex data items may need more than one view per item, and</span></span><br><span class="line">	    <span class="comment">// you provide access to all the views for a data item in a view holder</span></span><br><span class="line"></span><br><span class="line">	    <span class="comment">// Provide a suitable constructor (depends on the kind of dataset)</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="title">MyAdapter</span><span class="params">(String[] myDataset)</span> </span>&#123;</span><br><span class="line">	        mDataset = myDataset;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    <span class="comment">// Create new views (invoked by the layout manager)</span></span><br><span class="line">	    <span class="meta">@Override</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</span><br><span class="line">	        <span class="comment">// create a new view</span></span><br><span class="line">	        TextView tv = (TextView) LayoutInflater.from(parent.getContext())</span><br><span class="line">	        		.inflate(R.layout.my_text_view, parent, <span class="keyword">false</span>);</span><br><span class="line">	        <span class="comment">// set the view's size, margins, paddings and layout parameters</span></span><br><span class="line">	        <span class="comment">//...</span></span><br><span class="line">	        ViewHolder vh = <span class="keyword">new</span> ViewHolder(tv); <span class="comment">//构建一个ViewHolder</span></span><br><span class="line">	        <span class="keyword">return</span> vh;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    <span class="comment">// Replace the contents of a view (invoked by the layout manager)</span></span><br><span class="line">	    <span class="meta">@Override</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">	        <span class="comment">// - get element from your dataset at this position</span></span><br><span class="line">	        <span class="comment">// - replace the contents of the view with that element</span></span><br><span class="line">	        holder.mTextView.setText(mDataset[position]);</span><br><span class="line"></span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    <span class="comment">// Return the size of your dataset (invoked by the layout manager)</span></span><br><span class="line">	    <span class="meta">@Override</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	        <span class="keyword">return</span> mDataset.length;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>&#123;</span><br><span class="line">        <span class="comment">// each data item is just a string in this case</span></span><br><span class="line">        <span class="keyword">public</span> TextView mTextView;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ViewHolder</span><span class="params">(TextView v)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(v);</span><br><span class="line">            mTextView = v;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/27/material-design-2015-11-30-material-design-中文版/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Android Material Design中文版
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/22/随笔-hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello 朋友们！</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="material-design-2015-11-27-material-design" data-title="Android(Lollipop/5.0) Material Design(一) 简介" data-url="http://wdbaoge.com/2015/11/27/material-design-2015-11-27-material-design/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 无敌包哥
+    	</div>
+      	<div class="footer-right" >
+      		<a href="http://www.mumayi.com" target="_blank">
+      		<img src="/img/mmyft.png"  alt="木蚂蚁" />
+		</a>  
+	</div>
+    </div>
+  </div>
+  	<div >
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10944453833200654035' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+</div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="���ض���"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </div>
+</body>
+</html>

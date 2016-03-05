@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+ 
+  <title>RxVolley使用指南 | 无敌包哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RxVolley使用指南RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。
+RxVolley 项目地址： https://github.com/kymjs/RxVolley">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxVolley使用指南">
+<meta property="og:url" content="http://wdbaoge.com/2016/02/03/RxJava-RxJava-6/index.html">
+<meta property="og:site_name" content="无敌包哥">
+<meta property="og:description" content="RxVolley使用指南RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。
+RxVolley 项目地址： https://github.com/kymjs/RxVolley">
+<meta property="og:updated_time" content="2016-02-03T10:02:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RxVolley使用指南">
+<meta name="twitter:description" content="RxVolley使用指南RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。
+RxVolley 项目地址： https://github.com/kymjs/RxVolley">
+  
+    <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?051d6e710ef374003eec68a5ee0e36d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- End Baidu Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+ 
+</div>
+
+	
+
+
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/myicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">无敌包哥</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/游戏">游戏</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">Hongyang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/singwhatiwanna">任玉刚</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lzyzsd">大头鬼Bruce</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://liuling123.com/">Lauren</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/weiyirong">Ronys</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiaoduanguoguo.com/">小段果果</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.eagleweb.xyz/">菜鹰帅帅</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://i.ui.cn/ucenter/40090">zldesign世界级设计师</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://kumayi.com/">酷蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mumayi.com">木蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://bbs.mumayi.com/">木蚂蚁手机乐园</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">少壮不努力，老大写程序。 我就是我，写程序滴小伙儿。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">无敌包哥</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/myicon.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">无敌包哥</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/游戏">游戏</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-RxJava-RxJava-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/03/RxJava-RxJava-6/" class="article-date">
+  	<time datetime="2016-02-03T11:24:25.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RxVolley使用指南
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxAndroid/">RxAndroid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxVolley/">RxVolley</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文档/">文档</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RxVolley使用指南"><a href="#RxVolley使用指南" class="headerlink" title="RxVolley使用指南"></a>RxVolley使用指南</h2><p>RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。</p>
+<p>RxVolley 项目地址： <a href="https://github.com/kymjs/RxVolley" target="_blank" rel="external">https://github.com/kymjs/RxVolley</a></p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>RxVolley</code>是一个基于<code>Volley</code>的网络请求库；<br>同时支持<code>RxJava</code>；<br>可以选择使用<code>OKHttp</code>替代默认的 HttpUrlConnection 做网络请求；<br>可以选择使用图片加载功能(复用的网络请求将有效减少apk体积)；<br>移除了原<code>Volley</code>的 HttpClient 相关 API ，可在 API23 环境编译；<br>内置了<code>RxBus</code>的实现，可有效替换掉<code>EventBus</code>等相关库；</p>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>使用RxVolley，需要在你的<code>build.gradle</code>文件中加入</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.kymjs.rxvolley:rxvolley:1.0.2'</span></span><br></pre></td></tr></table></figure>
+<p>如果你还想使用OKhttp来替代默认的<code>HttpUrlconnection</code>，需要加入</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.kymjs.rxvolley:okhttp:1.0.1'</span></span><br></pre></td></tr></table></figure>
+<p>如果你想使用RxVolley的图片加载功能(复用http模块可以有效减少apk大小)，需要加入</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.kymjs.rxvolley:bitmapcore:1.0.2'</span></span><br></pre></td></tr></table></figure>
+<p>使用 RxVolley 做网络请求</p>
+<h2 id="简洁实现"><a href="#简洁实现" class="headerlink" title="简洁实现"></a>简洁实现</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//get请求简洁版实现</span></span><br><span class="line">RxVolley.<span class="keyword">get</span>(<span class="string">"http://www.kymjs.com/feed.xml"</span>, <span class="keyword">new</span> HttpCallback() &#123;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span>(<span class="params">String t</span>) </span>&#123;</span><br><span class="line">        Loger.debug(<span class="string">"请求到的数据:"</span> + t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//post请求简洁版实现</span></span><br><span class="line">HttpParams <span class="keyword">params</span> = <span class="keyword">new</span> HttpParams();</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"name"</span>, <span class="string">"kymjs"</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"age"</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"image"</span>, <span class="keyword">new</span> File(<span class="string">"path"</span>))<span class="comment">//文件上传</span></span><br><span class="line"></span><br><span class="line">RxVolley.post(<span class="string">"http://kymjs.com/feed.xml"</span>, <span class="keyword">params</span>, <span class="keyword">new</span> HttpCallback() &#123;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span>(<span class="params">String t</span>) </span>&#123;</span><br><span class="line">        Loger.debug(<span class="string">"请求到的数据:"</span> + t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="对Cookie等请求头的处理"><a href="#对Cookie等请求头的处理" class="headerlink" title="对Cookie等请求头的处理"></a>对Cookie等请求头的处理</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用户登录逻辑(HttpCallback中有很多重载方法，可以选择需要的实现)</span></span><br><span class="line">HttpParams <span class="keyword">params</span> = <span class="keyword">new</span> HttpParams();</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"name"</span>, <span class="string">"kymjs"</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"age"</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"password"</span>, <span class="string">"helloword"</span>);</span><br><span class="line">RxVolley.post(<span class="string">"http://kymjs.com/login"</span>, <span class="keyword">params</span>, <span class="keyword">new</span> HttpCallback() &#123;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span>(<span class="params">Map&lt;String, String&gt; headers, <span class="keyword">byte</span>[] t</span>) </span>&#123;</span><br><span class="line">        Loger.debug(<span class="string">"请求到的数据:"</span> + <span class="keyword">new</span> String(t));</span><br><span class="line">        <span class="comment">// 获取到的cookie</span></span><br><span class="line">        Loger.debug(<span class="string">"==="</span> + headers.<span class="keyword">get</span>(<span class="string">"Set-Cookie"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//向服务器传递cookie信息</span></span><br><span class="line">HttpParams <span class="keyword">params</span> = <span class="keyword">new</span> HttpParams();</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"name"</span>, <span class="string">"kymjs"</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"age"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">params</span>.putHeaders(<span class="string">"cookie"</span>, <span class="string">"your cookie"</span>);</span><br><span class="line"></span><br><span class="line">RxVolley.post(<span class="string">"http://kymjs.com/update"</span>, <span class="keyword">params</span>, <span class="keyword">new</span> HttpCallback() &#123;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span>(<span class="params">String t</span>) </span>&#123;</span><br><span class="line">        Loger.debug(<span class="string">"请求到的数据:"</span> + t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>比起 <strong>入门</strong> 章节讲述的网络请求，你可能希望有更多的需求</p>
+<h2 id="构建网络请求"><a href="#构建网络请求" class="headerlink" title="构建网络请求"></a>构建网络请求</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">HttpParams <span class="keyword">params</span> = <span class="keyword">new</span> HttpParams();</span><br><span class="line"></span><br><span class="line"><span class="comment">//同之前的设计，传递 http 请求头可以使用 putHeaders()</span></span><br><span class="line"><span class="keyword">params</span>.putHeaders(<span class="string">"cookie"</span>, <span class="string">"your cookie"</span>);</span><br><span class="line"><span class="keyword">params</span>.putHeaders(<span class="string">"User-Agent"</span>, <span class="string">"rxvolley"</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//传递 http 请求参数可以使用 put()</span></span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"name"</span>, <span class="string">"kymjs"</span>);</span><br><span class="line"><span class="keyword">params</span>.put(<span class="string">"age"</span>, <span class="string">"18"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//http请求的回调，内置了很多方法，详细请查看源码</span></span><br><span class="line"><span class="comment">//包括在异步响应的onSuccessInAsync():注不能做UI操作</span></span><br><span class="line"><span class="comment">//网络请求成功时的回调onSuccess()</span></span><br><span class="line"><span class="comment">//网络请求失败时的回调onFailure():例如无网络，服务器异常等</span></span><br><span class="line">HttpCallback callback = <span class="keyword">new</span> HttpCallback()&#123;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccessInAsync</span>(<span class="params"><span class="keyword">byte</span>[] t</span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span>(<span class="params">String t</span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span>(<span class="params"><span class="keyword">int</span> errorNo, String strMsg</span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ProgressListener listener = <span class="keyword">new</span> ProgressListener()&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * @param transferredBytes 进度</span><br><span class="line">     * @param totalSize 总量</span><br><span class="line">     */</span></span><br><span class="line">    @<span class="function">Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgress</span>(<span class="params"><span class="keyword">long</span> transferredBytes, <span class="keyword">long</span> totalSize</span>)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> RxVolley.Builder()</span><br><span class="line">    .url(<span class="string">"http://www.kymjs.com/rss.xml"</span>) <span class="comment">//接口地址  </span></span><br><span class="line">    <span class="comment">//请求类型，如果不加，默认为 GET 可选项： </span></span><br><span class="line">    <span class="comment">//POST/PUT/DELETE/HEAD/OPTIONS/TRACE/PATCH  </span></span><br><span class="line">    .httpMethod(RxVolley.Method.GET) </span><br><span class="line">    <span class="comment">//设置缓存时间: 默认是 get 请求 5 分钟, post 请求不缓存  </span></span><br><span class="line">    .cacheTime(<span class="number">6</span>) </span><br><span class="line">    <span class="comment">//内容参数传递形式，如果不加，默认为 FORM 表单提交，可选项 JSON 内容</span></span><br><span class="line">    .contentType(RxVolley.ContentType.FORM)</span><br><span class="line">    .<span class="keyword">params</span>(<span class="keyword">params</span>) <span class="comment">//上文创建的HttpParams请求参数集</span></span><br><span class="line">    <span class="comment">//是否缓存，默认是 get 请求 5 缓存分钟, post 请求不缓存</span></span><br><span class="line">    .shouldCache(<span class="keyword">true</span>) </span><br><span class="line">    .progressListener(listener) <span class="comment">//上传进度</span></span><br><span class="line">    .callback(callback) <span class="comment">//响应回调</span></span><br><span class="line">    .encoding(<span class="string">"UTF-8"</span>) <span class="comment">//编码格式，默认为utf-8</span></span><br><span class="line">    .doTask();  <span class="comment">//执行请求操作</span></span><br></pre></td></tr></table></figure>
+<h2 id="对-RxJava-的支持"><a href="#对-RxJava-的支持" class="headerlink" title="对 RxJava 的支持"></a>对 RxJava 的支持</h2><p><code>RxVolley</code> 支持返回一个 <code>Observable&lt;Result&gt;</code> 类型的数据，如下是 <code>Result</code> 类的原型</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Result &#123;</span><br><span class="line">    <span class="keyword">public</span> Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; header;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Result(Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; header, <span class="keyword">byte</span>[] data) &#123;</span><br><span class="line">        <span class="keyword">this</span>.header = header;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="执行一次请求，并返回-Observable"><a href="#执行一次请求，并返回-Observable" class="headerlink" title="执行一次请求，并返回 Observable"></a>执行一次请求，并返回 Observable<result></result></h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;Result&gt; observable = <span class="keyword">new</span> RxVolley.Builder()</span><br><span class="line">    .url(<span class="string">"http://www.kymjs.com/rss.xml"</span>)</span><br><span class="line">    <span class="comment">//default GET or POST/PUT/DELETE/HEAD/OPTIONS/TRACE/PATCH</span></span><br><span class="line">    .httpMethod(RxVolley.Method.POST) </span><br><span class="line">    .cacheTime(<span class="number">6</span>) <span class="comment">//default: get 5min, post 0min</span></span><br><span class="line">    .<span class="keyword">params</span>(<span class="keyword">params</span>)</span><br><span class="line">    .contentType(RxVolley.ContentType.JSON)</span><br><span class="line">    .getResult();  <span class="comment">// 使用getResult()来返回RxJava数据类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//当拿到 observable 对象后，你可以设置你自己的 subscriber </span></span><br><span class="line">observable.subscribe(subscriber);</span><br></pre></td></tr></table></figure>
+<h2 id="完整的使用示例"><a href="#完整的使用示例" class="headerlink" title="完整的使用示例"></a>完整的使用示例</h2><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">MainActivity</span> extends <span class="type">AppCompatActivity</span> &#123;</span><br><span class="line"></span><br><span class="line">    private <span class="type">Subscription</span> subscription;</span><br><span class="line"></span><br><span class="line">    @<span class="type">Override</span></span><br><span class="line">    protected <span class="built_in">void</span> onCreate(<span class="type">Bundle</span> savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        <span class="type">Observable</span>&lt;<span class="type">Result</span>&gt; observable = new <span class="type">RxVolley</span>.<span class="type">Builder</span>()</span><br><span class="line">                .url(<span class="string">"http://kymjs.com/feed.xml"</span>)</span><br><span class="line">                .contentType(<span class="type">RxVolley</span>.<span class="type">ContentType</span>.<span class="type">FORM</span>)</span><br><span class="line">                .getResult();</span><br><span class="line"></span><br><span class="line">        subscription = observable</span><br><span class="line">                .map(new <span class="type">Func1</span>&lt;<span class="type">Result</span>, <span class="type">String</span>&gt;() &#123;</span><br><span class="line">                    @<span class="type">Override</span></span><br><span class="line">                    public <span class="type">String</span> call(<span class="type">Result</span> <span class="literal">result</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> new <span class="type">String</span>(<span class="literal">result</span>.data);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                .subscribeOn(<span class="type">Schedulers</span>.io())</span><br><span class="line">                .observeOn(<span class="type">AndroidSchedulers</span>.mainThread())</span><br><span class="line">                .subscribe(new <span class="type">Action1</span>&lt;<span class="type">String</span>&gt;() &#123;</span><br><span class="line">                    @<span class="type">Override</span></span><br><span class="line">                    public <span class="built_in">void</span> call(<span class="type">String</span> <span class="literal">result</span>) &#123;</span><br><span class="line">                        <span class="type">Log</span>.i(<span class="string">"kymjs"</span>, <span class="string">"======网络请求"</span> + <span class="literal">result</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="type">Override</span></span><br><span class="line">    protected <span class="built_in">void</span> onDestroy() &#123;</span><br><span class="line">        super.onDestroy();</span><br><span class="line">        <span class="keyword">if</span> (subscription != null &amp;&amp; subscription.isUnsubscribed()) &#123;</span><br><span class="line">            subscription.unsubscribe();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义请求"><a href="#自定义请求" class="headerlink" title="自定义请求"></a>自定义请求</h2><p>也许你是 Volley 的重度使用者(就像我)，那么你一定是因为 Volley 自由的扩展性而爱上它的。<br>你可以通过创建一个<code>Request&lt;?&gt;</code>的子类，自由配置请求策略，缓存策略，数据传输加密，重试策略等。<br>最后通过</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">RxVolley</span><span class="selector-class">.Builder</span>()<span class="selector-class">.setRequest</span>(<span class="selector-tag">yourRequest</span>)<span class="selector-class">.doTask</span>();</span><br></pre></td></tr></table></figure>
+<p>去执行你的自定义 Request</p>
+<p>一个典型自定义Request的示例：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Form表单形式的Http请求</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FormRequest</span> <span class="keyword">extends</span> <span class="title">Request</span>&lt;<span class="title">byte</span>[]&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> HttpParams mParams;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> FormRequest(RequestConfig config, HttpParams params, HttpCallback callback) &#123;</span><br><span class="line">        <span class="keyword">super</span>(config, callback);</span><br><span class="line">        <span class="keyword">if</span> (params == <span class="literal">null</span>) &#123;</span><br><span class="line">            params = <span class="keyword">new</span> HttpParams();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.mParams = params;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String getCacheKey() &#123;</span><br><span class="line">        <span class="keyword">if</span> (getMethod() == RxVolley.Method.POST) &#123;</span><br><span class="line">            <span class="keyword">return</span> getUrl() + mParams.getUrlParams();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> getUrl();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String getBodyContentType() &#123;</span><br><span class="line">        <span class="keyword">if</span> (mParams.getContentType() != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> mParams.getContentType();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.getBodyContentType();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;HttpParamsEntry&gt; getHeaders() &#123;</span><br><span class="line">        <span class="keyword">return</span> mParams.getHeaders();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getBody() &#123;</span><br><span class="line">        ByteArrayOutputStream bos = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            mParams.writeTo(bos);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            Loger.debug(<span class="string">"FormRequest#getBody()---&gt;IOException writing to ByteArrayOutputStream"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> bos.toByteArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Response&lt;<span class="keyword">byte</span>[]&gt; parseNetworkResponse(NetworkResponse response) &#123;</span><br><span class="line">        <span class="keyword">return</span> Response.success(response.data, response.headers,</span><br><span class="line">                HttpHeaderParser.parseCacheHeaders(getUseServerControl(), getCacheTime(),</span><br><span class="line">                        response));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> deliverResponse(ArrayList&lt;HttpParamsEntry&gt; headers, <span class="keyword">final</span> <span class="keyword">byte</span>[] response) &#123;</span><br><span class="line">        <span class="keyword">if</span> (mCallback != <span class="literal">null</span>) &#123;</span><br><span class="line">            HashMap&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(headers.size());</span><br><span class="line">            <span class="keyword">for</span> (HttpParamsEntry <span class="string">entry :</span> headers) &#123;</span><br><span class="line">                map.put(entry.k, entry.v);</span><br><span class="line">            &#125;</span><br><span class="line">            mCallback.onSuccess(map, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Priority getPriority() &#123;</span><br><span class="line">        <span class="keyword">return</span> Priority.IMMEDIATE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文件-图片-下载"><a href="#文件-图片-下载" class="headerlink" title="文件(图片)下载"></a>文件(图片)下载</h2><p>利用 RxVolley 的自定义请求，在库中内置了文件下载功能。你可以使用</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下载进度(可选参数，不需要可不传)</span></span><br><span class="line">listener = <span class="keyword">new</span> ProgressListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">long</span> transferredBytes, <span class="keyword">long</span> totalSize)</span> </span>&#123;</span><br><span class="line">        Loger.debug(transferredBytes + <span class="string">"======"</span> + totalSize);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//下载回调，内置了很多方法，详细请查看源码</span></span><br><span class="line"><span class="comment">//包括在异步响应的onSuccessInAsync():注不能做UI操作</span></span><br><span class="line"><span class="comment">//下载成功时的回调onSuccess()</span></span><br><span class="line"><span class="comment">//下载失败时的回调onFailure():例如无网络，服务器异常等</span></span><br><span class="line">HttpCallback callback = <span class="keyword">new</span> HttpCallback()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSuccessInAsync</span><span class="params">(<span class="keyword">byte</span>[] t)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(String t)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(<span class="keyword">int</span> errorNo, String strMsg)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">RxVolley.download(FileUtils.getSDCardPath() + <span class="string">"/a.apk"</span>,</span><br><span class="line">    <span class="string">"https://www.oschina.net/uploads/osc-android-app-2.4.apk"</span>,</span><br><span class="line">    listener, callback);</span><br></pre></td></tr></table></figure>
+<h4 id="download-原型"><a href="#download-原型" class="headerlink" title="download()原型"></a>download()原型</h4><p>既然说了<code>下载功能</code>是利用 RxVolley 的自定义请求创建的，不妨看看他的方法实现：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"> <span class="keyword">*</span> 下载</span><br><span class="line"> <span class="keyword">*</span></span><br><span class="line"> <span class="keyword">*</span> <span class="meta">@param</span> storeFilePath    本地存储绝对路径</span><br><span class="line"> <span class="keyword">*</span> <span class="meta">@param</span> url              要下载的文件的url</span><br><span class="line"> <span class="keyword">*</span> <span class="meta">@param</span> progressListener 下载进度回调</span><br><span class="line"> <span class="keyword">*</span> <span class="meta">@param</span> callback         回调</span><br><span class="line"> <span class="keyword">*</span>/</span><br><span class="line">public static void download(String storeFilePath, String url, ProgressListener</span><br><span class="line">        progressListener, HttpCallback callback) &#123;</span><br><span class="line">    RequestConfig config = new RequestConfig();</span><br><span class="line">    config.mUrl = url;</span><br><span class="line">    FileRequest request = new FileRequest(storeFilePath, config, callback);</span><br><span class="line">    request.setOnProgressListener(progressListener);</span><br><span class="line">    new Builder().setRequest(request).doTask();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="更多可选设置"><a href="#更多可选设置" class="headerlink" title="更多可选设置"></a>更多可选设置</h2><p>理论上来说，一切的请求设置都可以通过自定义 Request 来完成。<br>但是，如果你和我一样是个懒人，当然更希望这些早就有人已经做好了。</p>
+<h3 id="设置文件缓存的路径"><a href="#设置文件缓存的路径" class="headerlink" title="设置文件缓存的路径"></a>设置文件缓存的路径</h3><p>默认的文件缓存路径是在SD卡根目录的 /RxVolley 文件夹下，你可以通过如下语句设置你的 cacheFolder</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">RxVolley</span><span class="selector-class">.setRequestQueue</span>(<span class="selector-tag">RequestQueue</span><span class="selector-class">.newRequestQueue</span>(<span class="selector-tag">cacheFolder</span>));</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，setRequestQueue 方法必须在 RxVolley.Build() 方法执行之前调用，也就是在使用 RxVolley 以前先设置配置信息。建议在 Application 类中完成这些设置。</p>
+<h3 id="Https设置"><a href="#Https设置" class="headerlink" title="Https设置"></a>Https设置</h3><p>如果不设置，默认信任全部的https证书。可以传入自定义 <code>SSLSocketFactory</code></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RxVolley.setRequestQueue(RequestQueue.newRequestQueue(cacheFolder), <span class="keyword">new</span> HttpConnectStack(<span class="literal">null</span>, sslSocketFactory));</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，setRequestQueue 方法必须在 RxVolley.Build() 方法执行之前调用，也就是在使用 RxVolley 以前先设置配置信息。建议在 Application 类中完成这些设置。</p>
+<p>一个自定义设置SSLSocketFactory的相关示例：</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下载的证书放到项目中的assets目录中</span></span><br><span class="line">InputStream ins = context.getAssets().open(<span class="string">"app_pay.cer"</span>)<span class="comment">; </span></span><br><span class="line">CertificateFactory cerFactory = CertificateFactory</span><br><span class="line">        .getInstance(<span class="string">"X.509"</span>)<span class="comment">;</span></span><br><span class="line">Certificate cer = cerFactory.generateCertificate(ins)<span class="comment">;</span></span><br><span class="line">KeyStore keyStore = KeyStore.getInstance(<span class="string">"PKCS12"</span>, <span class="string">"BC"</span>)<span class="comment">;</span></span><br><span class="line">keyStore.load(null, null)<span class="comment">;</span></span><br><span class="line">keyStore.setCertificateEntry(<span class="string">"trust"</span>, cer)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">SSLSocketFactory socketFactory = new SSLSocketFactory(keyStore)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">RxVolley.setRequestQueue(RequestQueue.newRequestQueue(RxVolley.CACHE_FOLDER), new HttpConnectStack(null, sslSocketFactory))<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Build-中的可选设置"><a href="#Build-中的可选设置" class="headerlink" title="Build()中的可选设置"></a>Build()中的可选设置</h3><ul>
+<li>详细请参阅 RxVolley$Builder 类中代码。</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求超时时间   </span></span><br><span class="line"><span class="function"><span class="title">timeout</span><span class="params">()</span></span>    </span><br><span class="line"></span><br><span class="line"><span class="comment">//为了更真实的模拟网络,如果读取缓存,延迟一段时间再返回缓存内容   </span></span><br><span class="line"><span class="function"><span class="title">delayTime</span><span class="params">()</span></span>   </span><br><span class="line"></span><br><span class="line"><span class="comment">//缓存有效时间,单位分钟  </span></span><br><span class="line"><span class="function"><span class="title">cacheTime</span><span class="params">()</span></span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">//使用服务器控制的缓存有效期,即cookie有效期  </span></span><br><span class="line"><span class="comment">//(如果使用服务器端控制,则无视#cacheTime())  </span></span><br><span class="line"><span class="function"><span class="title">useServerControl</span><span class="params">()</span></span>   </span><br><span class="line"></span><br><span class="line"><span class="comment">//启用缓存  </span></span><br><span class="line"><span class="function"><span class="title">shouldCache</span><span class="params">()</span></span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">//重连策略,Volley默认的重连策略是timeout=3000，重试1次  </span></span><br><span class="line"><span class="function"><span class="title">retryPolicy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="使用-OkHttp-替代-HttpUrlconnection"><a href="#使用-OkHttp-替代-HttpUrlconnection" class="headerlink" title="使用 OkHttp 替代 HttpUrlconnection"></a>使用 OkHttp 替代 HttpUrlconnection</h2><p>Volley 允许你创建自己的网络请求执行器，执行器需要实现<code>IHttpStack</code>接口</p>
+<p>RxVolley 的 okhttp module 已经有了使用 OkHttp 作为请求执行器的实现。</p>
+<p>你可以使用如下代码设置，依旧需要注意的是，setRequestQueue 方法必须在 RxVolley.Build() 方法执行之前调用，也就是在使用 RxVolley 以前先设置配置信息。建议在 Application 类中完成这些设置。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">RxVolley</span><span class="selector-class">.setRequestQueue</span>(<span class="selector-tag">RequestQueue</span><span class="selector-class">.newRequestQueue</span>(<span class="selector-tag">RxVolley</span><span class="selector-class">.CACHE_FOLDER</span>, <span class="selector-tag">new</span> <span class="selector-tag">OkHttpStack</span>(<span class="selector-tag">new</span> <span class="selector-tag">OkHttpClient</span>())));</span><br></pre></td></tr></table></figure>
+<p>使用 OkHttp 相关功能需要在你的 <code>build.gradle</code> 文件中加入</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.kymjs.rxvolley:okhttp:1.0.1'</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/04/DesignPattern-mvc-mvp-mvvm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          从Script到Code Blocks、Code Behind到MVC、MVP、MVVM
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/03/RxJava-RxJava-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">给 Android 开发者的 RxJava 详解</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="RxJava-RxJava-6" data-title="RxVolley使用指南" data-url="http://wdbaoge.com/2016/02/03/RxJava-RxJava-6/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 无敌包哥
+    	</div>
+      	<div class="footer-right" >
+      		<a href="http://www.mumayi.com" target="_blank">
+      		<img src="/img/mmyft.png"  alt="木蚂蚁" />
+		</a>  
+	</div>
+    </div>
+  </div>
+  	<div >
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10944453833200654035' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+</div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="���ض���"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+ 
+  <title>深入浅出RxJava四-在Android中使用响应式编程（译） | 无敌包哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在前面
+
+深入浅出RxJava（一：基础篇）
+深入浅出RxJava(二：操作符)
+深入浅出RxJava三–响应式的好处
+
+我大概介绍了RxJava是怎么使用的。下面我会介绍如何在Android中使用RxJava.
+英文原文链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出RxJava四-在Android中使用响应式编程（译）">
+<meta property="og:url" content="http://wdbaoge.com/2016/02/03/RxJava-RxJava-4/index.html">
+<meta property="og:site_name" content="无敌包哥">
+<meta property="og:description" content="在前面
+
+深入浅出RxJava（一：基础篇）
+深入浅出RxJava(二：操作符)
+深入浅出RxJava三–响应式的好处
+
+我大概介绍了RxJava是怎么使用的。下面我会介绍如何在Android中使用RxJava.
+英文原文链接">
+<meta property="og:updated_time" content="2016-02-03T07:48:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入浅出RxJava四-在Android中使用响应式编程（译）">
+<meta name="twitter:description" content="在前面
+
+深入浅出RxJava（一：基础篇）
+深入浅出RxJava(二：操作符)
+深入浅出RxJava三–响应式的好处
+
+我大概介绍了RxJava是怎么使用的。下面我会介绍如何在Android中使用RxJava.
+英文原文链接">
+  
+    <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?051d6e710ef374003eec68a5ee0e36d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- End Baidu Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+ 
+</div>
+
+	
+
+
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/myicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">无敌包哥</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/游戏">游戏</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">Hongyang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/singwhatiwanna">任玉刚</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lzyzsd">大头鬼Bruce</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://liuling123.com/">Lauren</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/weiyirong">Ronys</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiaoduanguoguo.com/">小段果果</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.eagleweb.xyz/">菜鹰帅帅</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://i.ui.cn/ucenter/40090">zldesign世界级设计师</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://kumayi.com/">酷蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mumayi.com">木蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://bbs.mumayi.com/">木蚂蚁手机乐园</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">少壮不努力，老大写程序。 我就是我，写程序滴小伙儿。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">无敌包哥</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/myicon.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">无敌包哥</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/游戏">游戏</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-RxJava-RxJava-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/03/RxJava-RxJava-4/" class="article-date">
+  	<time datetime="2016-02-03T08:24:25.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深入浅出RxJava四-在Android中使用响应式编程（译）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译/">译</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前面</p>
+<ul>
+<li><a href="http://wdbaoge.com/2016/02/03/RxJava-RxJava-1/">深入浅出RxJava（一：基础篇）</a></li>
+<li><a href="http://wdbaoge.com/2016/02/03/RxJava-RxJava-2/">深入浅出RxJava(二：操作符)</a></li>
+<li><a href="http://wdbaoge.com/2016/02/03/RxJava-RxJava-3/">深入浅出RxJava三–响应式的好处</a></li>
+</ul>
+<p>我大概介绍了RxJava是怎么使用的。下面我会介绍如何在Android中使用RxJava.</p>
+<p><a href="http://blog.danlew.net/2014/10/08/grokking-rxjava-part-4/" target="_blank" rel="external">英文原文链接</a><br><a id="more"></a></p>
+<h2 id="RxAndroid"><a href="#RxAndroid" class="headerlink" title="RxAndroid"></a>RxAndroid</h2><p>RxAndroid是RxJava的一个针对Android平台的扩展。它包含了一些能够简化Android开发的工具。</p>
+<p>首先，<code>AndroidSchedulers</code>提供了针对Android的线程系统的调度器。需要在UI线程中运行某些代码？很简单，只需要使用<code>AndroidSchedulers.mainThread()</code>:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">retrofitService</span><span class="selector-class">.getImage</span>(<span class="selector-tag">url</span>)</span><br><span class="line">    <span class="selector-class">.subscribeOn</span>(<span class="selector-tag">Schedulers</span><span class="selector-class">.io</span>())</span><br><span class="line">    <span class="selector-class">.observeOn</span>(<span class="selector-tag">AndroidSchedulers</span><span class="selector-class">.mainThread</span>())</span><br><span class="line">    <span class="selector-class">.subscribe</span>(<span class="selector-tag">bitmap</span> <span class="selector-tag">-</span>&gt; <span class="selector-tag">myImageView</span><span class="selector-class">.setImageBitmap</span>(<span class="selector-tag">bitmap</span>));</span><br></pre></td></tr></table></figure></p>
+<p>如果你已经创建了自己的Handler，你可以使用<code>HandlerThreadScheduler1</code>将一个调度器链接到你的handler上。</p>
+<p>接着要介绍的就是<code>AndroidObservable</code>，它提供了跟多的功能来配合Android的生命周期。<code>bindActivity()</code>和<code>bindFragment()</code>方法默认使用<code>AndroidSchedulers.mainThread()</code>来执行观察者代码，这两个方法会在Activity或者Fragment结束的时候通知被观察者停止发出新的消息。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">AndroidObservable</span><span class="selector-class">.bindActivity</span>(<span class="selector-tag">this</span>, <span class="selector-tag">retrofitService</span><span class="selector-class">.getImage</span>(<span class="selector-tag">url</span>))</span><br><span class="line">    <span class="selector-class">.subscribeOn</span>(<span class="selector-tag">Schedulers</span><span class="selector-class">.io</span>())</span><br><span class="line">    <span class="selector-class">.subscribe</span>(<span class="selector-tag">bitmap</span> <span class="selector-tag">-</span>&gt; <span class="selector-tag">myImageView</span><span class="selector-class">.setImageBitmap</span>(<span class="selector-tag">bitmap</span>);</span><br></pre></td></tr></table></figure></p>
+<p>我自己也很喜欢<code>AndroidObservable.fromBroadcast()</code>方法，它允许你创建一个类似<code>BroadcastReceiver</code>的<code>Observable</code>对象。下面的例子展示了如何在网络变化的时候被通知到：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)<span class="comment">;</span></span><br><span class="line"><span class="keyword">AndroidObservable.fromBroadcast(context, </span>filter)</span><br><span class="line">    .<span class="keyword">subscribe(intent </span>-&gt; handleConnectivityChange(intent))<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>最后要介绍的是<code>ViewObservable</code>,使用它可以给View添加了一些绑定。如果你想在每次点击view的时候都收到一个事件，可以使用<code>ViewObservable.clicks()</code>，或者你想监听TextView的内容变化，可以使用<code>ViewObservable.text()</code>。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ViewObservable.clicks(mCardNameEditText, <span class="literal">false</span>)</span><br><span class="line">    .subscribe(<span class="built_in">view</span> -&gt; handleClick(<span class="built_in">view</span>));</span><br></pre></td></tr></table></figure></p>
+<h2 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h2><p>大名鼎鼎的<code>Retrofit</code>库内置了对RxJava的支持。通常调用发可以通过使用一个Callback对象来获取异步的结果：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@GET</span>(<span class="string">"/user/&#123;id&#125;/photo"</span>)</span><br><span class="line">void getUserPhoto(<span class="variable">@Path</span>(<span class="string">"id"</span>) int id, Callback&lt;Photo&gt; cb);</span><br></pre></td></tr></table></figure></p>
+<p>使用RxJava，你可以直接返回一个Observable对象。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@GET</span>(<span class="string">"/user/&#123;id&#125;/photo"</span>)</span><br><span class="line">Observable&lt;Photo&gt; getUserPhoto(<span class="variable">@Path</span>(<span class="string">"id"</span>) int id);</span><br></pre></td></tr></table></figure></p>
+<p>现在你可以随意使用Observable对象了。你不仅可以获取数据，还可以进行变换。<br>Retrofit对Observable的支持使得它可以很简单的将多个REST请求结合起来。比如我们有一个请求是获取照片的，还有一个请求是获取元数据的，我们就可以将这两个请求并发的发出，并且等待两个结果都返回之后再做处理：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Observable.zip<span class="comment">(</span><br><span class="line">    service.getUserPhoto(id)</span>,</span><br><span class="line">    service.getPhotoMetadata<span class="comment">(id)</span>,</span><br><span class="line">    <span class="comment">(photo, metadata)</span> -&gt; createPhotoWithData<span class="comment">(photo, metadata)</span>)</span><br><span class="line">    .subscribe<span class="comment">(photoWithData -&gt; showPhoto(photoWithData)</span>);</span><br></pre></td></tr></table></figure></p>
+<p>在第二篇里我展示过一个类似的例子（使用flatMap()）。这里我只是想展示以下使用RxJava+Retrofit可以多么简单地组合多个REST请求。</p>
+<h2 id="遗留代码，运行极慢的代码"><a href="#遗留代码，运行极慢的代码" class="headerlink" title="遗留代码，运行极慢的代码"></a>遗留代码，运行极慢的代码</h2><p>Retrofit可以返回Observable对象，但是如果你使用的别的库并不支持这样怎么办？或者说一个内部的内码，你想把他们转换成Observable的？有什么简单的办法没？</p>
+<p>绝大多数时候<code>Observable.just()</code> 和 <code>Observable.from()</code> 能够帮助你从遗留代码中创建 <code>Observable</code> 对象:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Object <span class="title">oldMethod</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Observable&lt;Object&gt; <span class="title">newMethod</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Observable.just(oldMethod());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的例子中如果oldMethod()足够快是没有什么问题的，但是如果很慢呢？调用oldMethod()将会阻塞住他所在的线程。<br>为了解决这个问题，可以参考我一直使用的方法–使用<code>defer()</code>来包装缓慢的代码：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private Object slowBlockingMethod() &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">public Observable&lt;Object&gt; newMethod() &#123;</span><br><span class="line">    <span class="keyword">return</span> Observable.defer<span class="function"><span class="params">(() -&gt; Observable.just(slowBlockingMethod()))</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，newMethod()的调用不会阻塞了，除非你订阅返回的observable对象。</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>我把最难的不分留在了最后。如何处理Activity的生命周期？主要就是两个问题：<br>1.在configuration改变（比如转屏）之后继续之前的Subscription。</p>
+<p>比如你使用Retrofit发出了一个REST请求，接着想在listview中展示结果。如果在网络请求的时候用户旋转了屏幕怎么办？你当然想继续刚才的请求，但是怎么搞？</p>
+<p>2.Observable持有Context导致的内存泄露</p>
+<p>这个问题是因为创建subscription的时候，以某种方式持有了context的引用，尤其是当你和view交互的时候，这太容易发生！如果Observable没有及时结束，内存占用就会越来越大。<br>不幸的是，没有银弹来解决这两个问题，但是这里有一些指导方案你可以参考。</p>
+<p>第一个问题的解决方案就是使用RxJava内置的缓存机制，这样你就可以对同一个Observable对象执行unsubscribe/resubscribe，却不用重复运行得到Observable的代码。cache() (或者 replay())会继续执行网络请求（甚至你调用了unsubscribe也不会停止）。这就是说你可以在Activity重新创建的时候从cache()的返回值中创建一个新的Observable对象。<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;Photo&gt; request = service.getUserPhoto(id).cache();</span><br><span class="line">Subscription <span class="function"><span class="keyword">sub</span> = <span class="title">request</span>.<span class="title">subscribe</span></span>(photo -&gt; handleUserPhoto(photo));</span><br><span class="line"></span><br><span class="line">// ...When the Activity is being recreated...</span><br><span class="line"><span class="function"><span class="keyword">sub</span>.<span class="title">unsubscribe</span></span>();</span><br><span class="line"></span><br><span class="line">// ...Once the Activity is recreated...</span><br><span class="line">request.subscribe(photo -&gt; handleUserPhoto(photo));</span><br></pre></td></tr></table></figure></p>
+<p>注意，两次sub是使用的同一个缓存的请求。当然在哪里去存储请求的结果还是要你自己来做，和所有其他的生命周期相关的解决方案一延虎，必须在生命周期外的某个地方存储。（retained fragment或者单例等等）。</p>
+<p>第二个问题的解决方案就是在生命周期的某个时刻取消订阅。一个很常见的模式就是使用CompositeSubscription来持有所有的Subscriptions，然后在onDestroy()或者onDestroyView()里取消所有的订阅。</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> CompositeSubscription mCompositeSubscription</span><br><span class="line">    = <span class="keyword">new</span> CompositeSubscription();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mCompositeSubscription.add(</span><br><span class="line">        AndroidObservable.bindActivity(<span class="keyword">this</span>, Observable.just(<span class="string">"Hello, World!"</span>))</span><br><span class="line">        .subscribe(s -&gt; System.out.println(s)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onDestroy();</span><br><span class="line"></span><br><span class="line">    mCompositeSubscription.unsubscribe();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可以在Activity/Fragment的基类里创建一个CompositeSubscription对象，在子类中使用它。</p>
+<p>注意! 一旦你调用了 CompositeSubscription.unsubscribe()，这个CompositeSubscription对象就不可用了, 如果你还想使用CompositeSubscription，就必须在创建一个新的对象了。</p>
+<p>两个问题的解决方案都需要添加额外的代码，如果谁有更好的方案，欢迎告诉我。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>RxJava还是一个很新的项目，RxAndroid更是。RxAndroid目前还在活跃开发中，也没有多少好的例子。我打赌一年之后我的一些建议就会被看做过时了。</p>
+<p><a href="http://blog.csdn.net/lzyzsd/article/details/45033611" target="_blank" rel="external">译文原文链接</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/03/2016Android/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          2016这些Android技术会很火
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/03/RxJava-RxJava-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入浅出RxJava三--响应式的好处(译)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="RxJava-RxJava-4" data-title="深入浅出RxJava四-在Android中使用响应式编程（译）" data-url="http://wdbaoge.com/2016/02/03/RxJava-RxJava-4/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 无敌包哥
+    	</div>
+      	<div class="footer-right" >
+      		<a href="http://www.mumayi.com" target="_blank">
+      		<img src="/img/mmyft.png"  alt="木蚂蚁" />
+		</a>  
+	</div>
+    </div>
+  </div>
+  	<div >
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10944453833200654035' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+</div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="���ض���"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </div>
+</body>
+</html>

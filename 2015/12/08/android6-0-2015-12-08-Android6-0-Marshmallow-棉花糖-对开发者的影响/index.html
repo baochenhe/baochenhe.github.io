@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+ 
+  <title>Android6.0 Marshmallow(棉花糖) 对开发者的影响 | 无敌包哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android6.0 Marshmallow(棉花糖)官方原文：https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htm
+Android 6.0新版本包含了许多对系统功能和API的变化，而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！优化为主提升体验 Android 6.0亮点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android6.0 Marshmallow(棉花糖) 对开发者的影响">
+<meta property="og:url" content="http://wdbaoge.com/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/index.html">
+<meta property="og:site_name" content="无敌包哥">
+<meta property="og:description" content="Android6.0 Marshmallow(棉花糖)官方原文：https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htm
+Android 6.0新版本包含了许多对系统功能和API的变化，而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！优化为主提升体验 Android 6.0亮点">
+<meta property="og:updated_time" content="2015-12-08T05:55:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android6.0 Marshmallow(棉花糖) 对开发者的影响">
+<meta name="twitter:description" content="Android6.0 Marshmallow(棉花糖)官方原文：https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htm
+Android 6.0新版本包含了许多对系统功能和API的变化，而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！优化为主提升体验 Android 6.0亮点">
+  
+    <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?051d6e710ef374003eec68a5ee0e36d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- End Baidu Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+ 
+</div>
+
+	
+
+
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/myicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">无敌包哥</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/游戏">游戏</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">Hongyang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/singwhatiwanna">任玉刚</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lzyzsd">大头鬼Bruce</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://liuling123.com/">Lauren</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/weiyirong">Ronys</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiaoduanguoguo.com/">小段果果</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.eagleweb.xyz/">菜鹰帅帅</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://i.ui.cn/ucenter/40090">zldesign世界级设计师</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://kumayi.com/">酷蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mumayi.com">木蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://bbs.mumayi.com/">木蚂蚁手机乐园</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">少壮不努力，老大写程序。 我就是我，写程序滴小伙儿。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">无敌包哥</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/myicon.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">无敌包哥</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/游戏">游戏</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/" class="article-date">
+  	<time datetime="2015-12-08T05:35:13.000Z" itemprop="datePublished">2015-12-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android6.0 Marshmallow(棉花糖) 对开发者的影响
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android6-0/">android6.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/棉花糖/">棉花糖</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Android6.0 Marshmallow(棉花糖)<br>官方原文：</strong><br><a href="https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htmll" target="_blank" rel="external">https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htm</a></p>
+<p><strong>Android 6.0新版本包含了许多对系统功能和API的变化，<br>而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！<br>优化为主提升体验 Android 6.0亮点解析</strong><br><a href="http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml" target="_blank" rel="external">http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml</a></p>
+<h1 id="系统功能改变"><a href="#系统功能改变" class="headerlink" title="系统功能改变"></a>系统功能改变</h1><h2 id="1-Doze-and-App-Standby："><a href="#1-Doze-and-App-Standby：" class="headerlink" title="1. Doze and App Standby："></a>1. Doze and App Standby：</h2><p>也就是睡眠和app待机。<br>从Android6.0开始，Android提供了两种延长电池使用寿命的功能：睡眠和app待机。<br>当设备没有连接电源，进入Doze模式时，让应用程序处于待机状态以此减少电池的消耗<br>据说，在nexus5和nexus6上测试，平均续航时间提高了30%。(亲儿子数据，仅供参考)<br>系统进入睡眠状态后，会隔一段时间处理一下正在挂起任务，随着时间的推移，后面的间隔时间会越来越长，以此减少电量的消耗</p>
+<a id="more"></a>
+<h2 id="2-Runtime-Permissions："><a href="#2-Runtime-Permissions：" class="headerlink" title="2. Runtime Permissions："></a>2. Runtime Permissions：</h2><p>也就是在程序请求要用的权限 的时候，系统会给一个弹框。提示用户，要不要给这个程序的某某权限。在6.0以前的Android系统上，<br>是在安装之前把所有应用需要的权限全部展示给看，用户决定是否要安装这个App，之后App用权限的时候不会提示用户(有些手机会提示是因为系统定制的或者第三方软件的提示)。<br>如果一个程序被静默安装了，用户不知道，也没有权限提示。那是非常不安全滴~<br>那么6.0以后，不止在用户安装的时候会提示用户，程序在运行的时候，请求某种权限之前，系统也会弹出一个对话框，让用户决定是否给XX权限给XX软件。<br>当然，如果是你不认识的App，请求某些比较隐私的权限。就可以果断卸载了。酱紫，就防止了很多app会泄露隐私了(哎。有些App的一些强盗行为拦都拦不住、不说了~)。</p>
+<h2 id="3-Boring-SSL"><a href="#3-Boring-SSL" class="headerlink" title="3. Boring SSL:"></a>3. Boring SSL:</h2><p>Boring SSL 是更安全的SSL协议，在Android6.0以前使用的是open SSL协议。 升级为 Boring SSL（心脏出血漏洞、中间人攻击等漏洞修复）</p>
+<h2 id="3-应用数据自动备份功能"><a href="#3-应用数据自动备份功能" class="headerlink" title="3. 应用数据自动备份功能:"></a>3. 应用数据自动备份功能:</h2><p>（不过，听说是基于 Google 账号的自动备份~ , 还需要各位自己折腾咯）</p>
+<h1 id="系统增强"><a href="#系统增强" class="headerlink" title="系统增强"></a>系统增强</h1><h3 id="1-访问硬件标识符"><a href="#1-访问硬件标识符" class="headerlink" title="1.访问硬件标识符"></a>1.访问硬件标识符</h3><h3 id="2-APK内容修改签名认证"><a href="#2-APK内容修改签名认证" class="headerlink" title="2.APK内容修改签名认证"></a>2.APK内容修改签名认证</h3><h3 id="3-USB连接"><a href="#3-USB连接" class="headerlink" title="3.USB连接"></a>3.USB连接</h3><h3 id="4-App-Links"><a href="#4-App-Links" class="headerlink" title="4.App Links"></a>4.App Links</h3><p>#重点API相关修改：</p>
+<p>##1. Apache HTTP Client去除<br>HttpClient在6.0中已经去掉了，如果要继续使用HttpClient。并且还想支持6.0的用户的话，就只能添加HttpClient的支持库了。<br>Eclipse的话在libs中加入<br>org.apache.http.legacy.jar<br>上面的jar包在：**\android-sdk-windows\platforms\android-23\optional下（需要下载android 6.0的SDK），<br>AndroidStudio的话就容易多了。在Gradle中添加一句话就解决：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Notifycation的变更"><a href="#2-Notifycation的变更" class="headerlink" title="2. Notifycation的变更"></a>2. Notifycation的变更</h2><p>1，不要打扰模式（新的INTERRUPTION_FILTER_ALARMS过滤级别）<br>2，添加新的category值CATEGORY REMINDER 用于区分CATEGORY_EVENT和CATEGORY_ALARM<br>3，新的Icon类，你可以通过setSmallIcon() 和setLargeIcon() 修改Notifacations图标，同样的addAction() 方法现在接收一个Icon对象，不再是一个资源文件了。<br>4，新的getActiveNotification()方法 允许你查找哪些应用的Notifications还活着</p>
+<h2 id="3-删除全局支持书签（Browser-Bookmark-Changes）"><a href="#3-删除全局支持书签（Browser-Bookmark-Changes）" class="headerlink" title="3. 删除全局支持书签（Browser Bookmark Changes）"></a>3. 删除全局支持书签（Browser Bookmark Changes）</h2><p>读取历史书签和写入历史书签的权限也被去掉 只能内部存储书签<br>android.provider.Browser.getAllBookmarks() 和android.provider.Browser.saveBookmark()方法现在除去。同样，READ_HISTORY_BOOKMARKS和WRITE_HISTORY_BOOKMARKS权限被除去。如果您的应用目标的Android 6.0（API级别23）或更高，没有从全局供应商访问书签或使用书签的权限。相反，您的应用程序应该在内部存储书签数据。</p>
+<h2 id="4-Voice-Interactions-语音交互"><a href="#4-Voice-Interactions-语音交互" class="headerlink" title="4. Voice Interactions(语音交互)"></a>4. Voice Interactions(语音交互)</h2><p>在应用中通过Voice Actions构建一个语音<br>VoiceInteractor</p>
+<h2 id="5-Adoptable-Storage-Devices-存储设备"><a href="#5-Adoptable-Storage-Devices-存储设备" class="headerlink" title="5. Adoptable Storage Devices(存储设备)"></a>5. Adoptable Storage Devices(存储设备)</h2><p>可以选择手机内部存储和外部SD卡存储</p>
+<h2 id="6-手电筒"><a href="#6-手电筒" class="headerlink" title="6. 手电筒"></a>6. 手电筒</h2><p>api的更新 可以直接使用setTouchMode()方法来开启或者关闭手电筒</p>
+<h2 id="7-4K-Display-Mode"><a href="#7-4K-Display-Mode" class="headerlink" title="7. 4K Display Mode"></a>7. 4K Display Mode</h2><p>让高配手机得以4K呈现</p>
+<h2 id="8-支持指纹认证"><a href="#8-支持指纹认证" class="headerlink" title="8. 支持指纹认证"></a>8. 支持指纹认证</h2><p>提供原生指纹识别API FingerprintManager<br>当然少不了权限：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission</span><br><span class="line">android:<span class="built_in">name</span>=<span class="string">"android.permission.USE_FINGERPRINT"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>(还可以用模拟器模拟的哟，官方文档有介绍)</p>
+<h1 id="API增强："><a href="#API增强：" class="headerlink" title="API增强："></a>API增强：</h1><h3 id="1，蓝牙笔增强"><a href="#1，蓝牙笔增强" class="headerlink" title="1，蓝牙笔增强"></a>1，蓝牙笔增强</h3><h3 id="2，蓝牙"><a href="#2，蓝牙" class="headerlink" title="2，蓝牙"></a>2，蓝牙</h3><p>扫描 减少蓝牙扫描消耗 提升系统性能</p>
+<h3 id="3，热点2-0支持"><a href="#3，热点2-0支持" class="headerlink" title="3，热点2.0支持"></a>3，热点2.0支持</h3><p>提供新的热点API 用于支持热点2.0</p>
+<h3 id="4，签名文件"><a href="#4，签名文件" class="headerlink" title="4，签名文件"></a>4，签名文件</h3><p>Android新版本的秘钥库提供程序不再支持DSA</p>
+<h3 id="5，相机服务更新"><a href="#5，相机服务更新" class="headerlink" title="5，相机服务更新"></a>5，相机服务更新</h3><p>访问共享资源的相机业务 已经从之前的先来先访问的服务方式，变为高优先级进程先访问模式</p>
+<h3 id="6，WIFI-网络"><a href="#6，WIFI-网络" class="headerlink" title="6，WIFI 网络"></a>6，WIFI 网络</h3><p>只能修改你自己创建的WifiConfiguration相关状态<br>这里整理了大部分Android6.0相关的东西。<br>我感觉对开发者影响总的来说不是很多，就一个HttpClient的去除可能影响较大，其他的相对较少吧~<br>原生支持指纹和语音的这个东西，这个感觉好处是有滴，但是有限。<br>其他的就只能算是优化了</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/09/随笔-2015-12-09-hexo-博客转载/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          hexo 博客神速转载
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/28/随笔-2015-11-27-统计/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo yilia主题统计</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响" data-title="Android6.0 Marshmallow(棉花糖) 对开发者的影响" data-url="http://wdbaoge.com/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 无敌包哥
+    	</div>
+      	<div class="footer-right" >
+      		<a href="http://www.mumayi.com" target="_blank">
+      		<img src="/img/mmyft.png"  alt="木蚂蚁" />
+		</a>  
+	</div>
+    </div>
+  </div>
+  	<div >
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10944453833200654035' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+</div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="���ض���"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </div>
+</body>
+</html>

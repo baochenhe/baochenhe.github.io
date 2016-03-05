@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+ 
+  <title>MVP in Android 整理 | 无敌包哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVP in Android 整理">
+<meta property="og:url" content="http://wdbaoge.com/2016/02/19/Android-mvp/index.html">
+<meta property="og:site_name" content="无敌包哥">
+<meta property="og:description" content="前言最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这">
+<meta property="og:image" content="http://7xnqm4.com1.z0.glb.clouddn.com/Android%E4%B8%ADMVP%E7%9A%84%E4%BD%BF%E7%94%A8%C2%8F%C2%9B.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20150622212916054">
+<meta property="og:updated_time" content="2016-02-19T06:30:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVP in Android 整理">
+<meta name="twitter:description" content="前言最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这">
+<meta name="twitter:image" content="http://7xnqm4.com1.z0.glb.clouddn.com/Android%E4%B8%ADMVP%E7%9A%84%E4%BD%BF%E7%94%A8%C2%8F%C2%9B.png">
+  
+    <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?051d6e710ef374003eec68a5ee0e36d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- End Baidu Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+ 
+</div>
+
+	
+
+
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/myicon.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">无敌包哥</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/游戏">游戏</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 12px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 12px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 14px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 14px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/教程/" style="font-size: 14px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 16px;">译</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">Hongyang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/singwhatiwanna">任玉刚</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lzyzsd">大头鬼Bruce</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://liuling123.com/">Lauren</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/weiyirong">Ronys</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiaoduanguoguo.com/">小段果果</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.eagleweb.xyz/">菜鹰帅帅</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://i.ui.cn/ucenter/40090">zldesign世界级设计师</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://kumayi.com/">酷蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://mumayi.com">木蚂蚁</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://bbs.mumayi.com/">木蚂蚁手机乐园</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">少壮不努力，老大写程序。 我就是我，写程序滴小伙儿。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">无敌包哥</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/myicon.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">无敌包哥</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">业精于勤荒于嬉 行成于思毁于随</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/游戏">游戏</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/baochenhe" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1951566190/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/bao-ge-ge-78-45" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="http://www.mumayi.com" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Android-mvp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/19/Android-mvp/" class="article-date">
+  	<time datetime="2016-02-19T06:30:23.000Z" itemprop="datePublished">2016-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVP in Android 整理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvp/">mvp</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近发现MVC MVP MVVM这三种设计模式经常同时出现，一下子引起了我的关注，MVC就不用说了大家都已经熟悉的不行，你可能没理解清楚，但是肯定没少听，在没写android之前是写的J2EE ，而J2EE都是采用MVC模式进行开发的，所以在搭建公司项目的时候，也是使用类似MVC的架构（严格来讲，之前的项目还算不上MVC模式，只是简单将网络请求与界面分离，然后通过Handle通知更新界面）。这种写法，在后面随着项目越来越大，Activty或者Fragment中代码也会越来越多，导致项目的维护变的越来越复杂。一直在思考有没有一种更好的模式去解决这个问题。 后面发现了MVP ，对于MVP（Model View Presenter），大多数人都能说出一二：“MVC的演化版本”，“让Model和View完全解耦”等等。最近看了很多文章 ，在这里做一下整理。</p>
+<h3 id="MVC-模式"><a href="#MVC-模式" class="headerlink" title="MVC 模式"></a>MVC 模式</h3><ul>
+<li><p>View：对应于布局文件</p>
+</li>
+<li><p>Model：业务逻辑和实体模型</p>
+</li>
+<li><p>Controllor：对应于Activity</p>
+</li>
+</ul>
+<p>看起来的确像那么回事，但是细细的想想这个View对应于布局文件，其实能做的事情特别少，实际上关于该布局文件中的数据绑定的操作，事件处理的代码都在Activity中，造成了Activity既像View又像Controller（当然了Data-Binder的出现，可能会让View更像View吧）。这可能也就是为何，在<a href="https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android" target="_blank" rel="external">该文</a>中有一句这样的话：</p>
+<pre><code>Most of the modern Android applications just use View-Model architecture，everything is connected with Activity.
+</code></pre><h3 id="什么是-MVP"><a href="#什么是-MVP" class="headerlink" title="什么是 MVP"></a>什么是 MVP</h3><p>MVP是模型（Model）、视图（View）、主持人（Presenter）的缩写，分别代表项目中3个不同的模块。</p>
+<p>模型（Model）：负责处理数据的加载或者存储，比如从网络或本地数据库获取数据等；</p>
+<p>视图（View）：负责界面数据的展示，与用户进行交互；</p>
+<p>主持人（Presenter）：相当于协调者，是模型与视图之间的桥梁，将模型与视图分离开来。</p>
+<p>如下图所示，View与Model并不直接交互，而是使用Presenter作为View与Model之间的桥梁。其中Presenter中同时持有Viwe层以及Model层的Interface的引用，而View层持有Presenter层Interface的引用。当View层某个界面需要展示某些数据的时候，首先会调用Presenter层的某个接口，然后Presenter层会调用Model层请求数据，当Model层数据加载成功之后会调用Presenter层的回调方法通知Presenter层数据加载完毕，最后Presenter层再调用View层的接口将加载后的数据展示给用户。这就是MVP模式的整个核心过程。</p>
+<p><img src="http://7xnqm4.com1.z0.glb.clouddn.com/Android%E4%B8%ADMVP%E7%9A%84%E4%BD%BF%E7%94%A8%C2%8F%C2%9B.png" alt=""></p>
+<p>这样分层的好处就是大大减少了Model与View层之间的耦合度。一方面可以使得View层和Model层单独开发与测试，互不依赖。另一方面Model层可以封装复用，可以极大的减少代码量<br>当将架构改为MVP以后，Presenter的出现，将Actvity视为View层，Presenter负责完成View层与Model层的交互。现在是这样的：</p>
+<ul>
+<li>View 对应于Activity，负责View的绘制以及与用户交互</li>
+<li>Model 依然是业务逻辑和实体模型</li>
+<li>Presenter 负责完成View于Model间的交互</li>
+</ul>
+<h3 id="MVC-和-MVP-的区别"><a href="#MVC-和-MVP-的区别" class="headerlink" title="MVC 和 MVP 的区别"></a>MVC 和 MVP 的区别</h3><p><img src="http://img.blog.csdn.net/20150622212916054" alt=""></p>
+<p>其实最明显的区别就是，MVC中是允许Model和View进行交互的，而MVP中很明显，Model与View之间的交互由Presenter完成。</p>
+<p>本文参考：<a href="http://blog.csdn.net/lmj623565791/article/details/46596109" target="_blank" rel="external">鸿洋_ 的 浅谈 MVP in Android</a> 和 <a href="http://liuling123.com/2015/12/mvp-pattern-android.html#0-tsina-1-71192-397232819ff9a47a7b7e80a40613cfe1?sukey=014c68f407f2d3e10a355a4317c08272191ad0350a57a7a4397e02a8aed55bf2b2823f55b327d986ebd2334597d395d0" target="_blank" rel="external">Lauren 的MVP模式在Android项目中的使用</a></p>
+<p>感谢这两位的分享，我看到的许多的MVP的博客就这两写的我感觉比较符合我得口味，鸿洋_的例子比较简单不过逻辑介绍的很清楚，能让你直观的感受到MVP模式具体应该怎么写代码。 而后者Lauren 跟更注重的是项目实践了，你会通过阅读后者找更多的在你项目中的使用场景。 细细去看他们的博客吧，我也只是一个辛勤的搬运工。</p>
+<h3 id="强烈建议"><a href="#强烈建议" class="headerlink" title="强烈建议"></a>强烈建议</h3><p>强烈建议大家看完后一定要自己也写一个DEMO哪怕是跟他们一摸一样的。</p>
+<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>最近难得有一阵子的闲暇时间，终于开始有机会再下心来，总结下自己，观望下外边新发生的东西。技术这个东西真特么是逆水行舟，不仅则退。。。 前些天面试一个85年的人出来干技术也78年了吧，一直固步自封的做东西android现在已经出到6.0他都不知道，一直还在围绕自己公司的业务做着android2.1  2.2 。其他一个不知。。。 跟整个行业断层了。 悲哀。。。  趁着还能动，就多学习一些东西吧。 </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/04/DesignPattern-mvc-mvp-mvvm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从Script到Code Blocks、Code Behind到MVC、MVP、MVVM</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android-mvp" data-title="MVP in Android 整理" data-url="http://wdbaoge.com/2016/02/19/Android-mvp/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 无敌包哥
+    	</div>
+      	<div class="footer-right" >
+      		<a href="http://www.mumayi.com" target="_blank">
+      		<img src="/img/mmyft.png"  alt="木蚂蚁" />
+		</a>  
+	</div>
+    </div>
+  </div>
+  	<div >
+
+<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10944453833200654035' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+</div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="���ض���"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+  </div>
+</body>
+</html>
