@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
+						<a href="/tags/ActivityManager/" style="font-size: 10px;">ActivityManager</a> <a href="/tags/ActivityService/" style="font-size: 10px;">ActivityService</a> <a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/Intent/" style="font-size: 10px;">Intent</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/PackageManger/" style="font-size: 10px;">PackageManger</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -239,6 +239,193 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-material-design-should-know-so" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/09/material-design-should-know-so/" class="article-date">
+  	<time datetime="2015-12-09T10:49:13.000Z" itemprop="datePublished">2015-12-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/09/material-design-should-know-so/">关于Android的.so文件你所需要知道的</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://ph0b.com/android-abis-and-so-files/">原文链接</a></p>
+<p>早期的Android系统几乎只支持ARMv5的CPU架构，你知道现在它支持多少种吗？7种！</p>
+<p>Android系统目前支持以下七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。</p>
+<p>应用程序二进制接口（Application Binary Interface）定义了二进制文件（尤其是.so文件）如何运行在相应的系统平台上，从使用的指令集，内存对齐到可用的系统函数库。在Android 系统上，每一个CPU架构对应一个ABI：armeabi，armeabi-v7a，x86，mips，arm64- v8a，mips64，x86_64。</p>
+<p><a name="_label0" style="padding: 0px; margin: 0px; text-decoration: none; color: rgb(34, 116, 155);"></a></p>
+<h3 id="为什么你需要重点关注-so文件"><a href="#为什么你需要重点关注-so文件" class="headerlink" title="为什么你需要重点关注.so文件"></a>为什么你需要重点关注.so文件</h3><p>如果项目中使用到了NDK，它将会生成.so文件，因此显然你已经在关注它了。如果只是使用Java语言进行编码，你可能在想不需要关注.so文 件了吧，因为Java是跨平台的。但事实上，即使你在项目中只是使用Java语言，很多情况下，你可能并没有意识到项目中依赖的函数库或者引擎库里面已经 嵌入了.so文件，并依赖于不同的ABI。</p>
+<p>例如，项目中使用RenderScript支持库，OpenCV，Unity，android-gif-drawable，SQLCipher等，你都已经在生成的APK文件中包含.so文件了，而你需要关注.so文件。</p>
+<p>Android应用支持的ABI取决于APK中位于lib/ABI目录中的.so文件，其中ABI可能是上面说过的七种ABI中的一种。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/09/material-design-should-know-so/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-随笔-2015-12-09-hexo-博客转载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/09/随笔-2015-12-09-hexo-博客转载/" class="article-date">
+  	<time datetime="2015-12-09T01:49:45.000Z" itemprop="datePublished">2015-12-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/09/随笔-2015-12-09-hexo-博客转载/">hexo 博客神速转载</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>时候在网上看到别人的博文写的不错，想要转载到自己博客里。</p>
+<p>但是由于我们是自己搭建的博客，发表的文章都是以源码方式编辑的。没有方便的一键转载什么的~~</p>
+<p>那在这种时候改怎么办呢~<br><a id="more" style="-webkit-margin-before: 0px; -webkit-margin-after: 0px; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: inherit; font-family: inherit; font-size: 16px; vertical-align: baseline; color: rgb(44, 166, 203);"></a></p>
+<p>下面是一点个人发现的一些小技巧，<br>当然，也许还有其他更方便你的方式我还没有发现，<br>如果有更加方便的方式转载博客的话，期待能在下方回复。</p>
+<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><p>直接将该网页保存成html格式的，然后将不需要的一些广告或者其他的东西去掉，<br>最后保存将该html直接放在_post目录下，记得添加title、date之类的东西</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/09/随笔-2015-12-09-hexo-博客转载/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/" class="article-date">
+  	<time datetime="2015-12-08T05:35:13.000Z" itemprop="datePublished">2015-12-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/">Android6.0 Marshmallow(棉花糖) 对开发者的影响</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Android6.0 Marshmallow(棉花糖)<br>官方原文：</strong><br><a href="https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htmll">https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.htm</a></p>
+<p><strong>Android 6.0新版本包含了许多对系统功能和API的变化，<br>而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！<br>优化为主提升体验 Android 6.0亮点解析</strong><br><a href="http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml">http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml</a></p>
+<h1 id="系统功能改变"><a href="#系统功能改变" class="headerlink" title="系统功能改变"></a>系统功能改变</h1><h2 id="1-Doze-and-App-Standby："><a href="#1-Doze-and-App-Standby：" class="headerlink" title="1. Doze and App Standby："></a>1. Doze and App Standby：</h2><p>也就是睡眠和app待机。<br>从Android6.0开始，Android提供了两种延长电池使用寿命的功能：睡眠和app待机。<br>当设备没有连接电源，进入Doze模式时，让应用程序处于待机状态以此减少电池的消耗<br>据说，在nexus5和nexus6上测试，平均续航时间提高了30%。(亲儿子数据，仅供参考)<br>系统进入睡眠状态后，会隔一段时间处理一下正在挂起任务，随着时间的推移，后面的间隔时间会越来越长，以此减少电量的消耗</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android6-0/">android6.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/棉花糖/">棉花糖</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/08/android6-0-2015-12-08-Android6-0-Marshmallow-棉花糖-对开发者的影响/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-theme-modify" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -364,61 +551,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-随笔-2015-11-27-随笔" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/27/随笔-2015-11-27-随笔/" class="article-date">
-  	<time datetime="2015-11-27T07:53:36.000Z" itemprop="datePublished">2015-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/27/随笔-2015-11-27-随笔/">随笔</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="如你所见"><a href="#如你所见" class="headerlink" title="如你所见"></a>如你所见</h1><p>是的如你所见，我就是随笔写了一笔！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-游戏-2015-11-27-刺客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -478,11 +610,11 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-material-design-2015-11-27-material-design" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-随笔-2015-11-27-随笔" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/27/material-design-2015-11-27-material-design/" class="article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">2015-11-27</time>
+      <a href="/2015/11/27/随笔-2015-11-27-随笔/" class="article-date">
+  	<time datetime="2015-11-27T07:53:36.000Z" itemprop="datePublished">2015-11-27</time>
 </a>
     </div>
   
@@ -495,7 +627,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/27/material-design-2015-11-27-material-design/">Android(Lollipop/5.0) Material Design(一) 简介</a>
+      <a class="article-title" href="/2015/11/27/随笔-2015-11-27-随笔/">随笔</a>
     </h1>
   
 
@@ -504,9 +636,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>查看官网地址：<a href="https://developer.android.com/design/material/index.html" title="android Material Design官网地址">https://developer.android.com/design/material/index.html</a><br>使用Material Design 需要api21，即Lollipop/5.0以上<br>Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api</p>
-<h2 id="Material-主题"><a href="#Material-主题" class="headerlink" title="Material 主题"></a>Material 主题</h2><p>在manifest.xml 中<br><code>&lt;... android:theme=&quot;@android:style/Theme.Material&quot; &gt;</code><br><strong>提示一下有很多相关的主题</strong></p>
-<p><img src="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="使用主题示例"></p>
+        <h1 id="如你所见"><a href="#如你所见" class="headerlink" title="如你所见"></a>如你所见</h1><p>是的如你所见，我就是随笔写了一笔！</p>
+
       
     </div>
     
@@ -514,15 +645,11 @@ var _hmt = _hmt || [];
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/27/material-design-2015-11-27-material-design/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -585,6 +712,66 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2015/11/27/material-design-2015-11-30-material-design-中文版/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-material-design-2015-11-27-material-design" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/27/material-design-2015-11-27-material-design/" class="article-date">
+  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">2015-11-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/27/material-design-2015-11-27-material-design/">Android(Lollipop/5.0) Material Design(一) 简介</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>查看官网地址：<a href="https://developer.android.com/design/material/index.html" title="android Material Design官网地址">https://developer.android.com/design/material/index.html</a><br>使用Material Design 需要api21，即Lollipop/5.0以上<br>Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api</p>
+<h2 id="Material-主题"><a href="#Material-主题" class="headerlink" title="Material 主题"></a>Material 主题</h2><p>在manifest.xml 中<br><code>&lt;... android:theme=&quot;@android:style/Theme.Material&quot; &gt;</code><br><strong>提示一下有很多相关的主题</strong></p>
+<p><img src="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="使用主题示例"></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/11/27/material-design-2015-11-27-material-design/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

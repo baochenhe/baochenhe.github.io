@@ -6,21 +6,20 @@
 
   
  
-  <title>2016这些Android技术会很火 | 无敌包哥</title>
+  <title>Intent和IntentFilter详解 | 无敌包哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
+  <meta name="description" content="IntentIntent用于启动Activity, Service, 以及BroadcastReceiver三种组件, 同时还是组件之间通信的重要媒介.使用Intent启动组件的优势1, Intent为组件的启动提供了一致的编程模型. 无论想要启动的组件是Activity, Service, 还是BroadcastReceiver, 都可以使用Intent封装启动的意图.2, 在某些时候, 应用程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016这些Android技术会很火">
-<meta property="og:url" content="http://wdbaoge.com/2016/02/03/2016Android/index.html">
+<meta property="og:title" content="Intent和IntentFilter详解">
+<meta property="og:url" content="http://wdbaoge.com/2016/03/16/framework-intent-1/index.html">
 <meta property="og:site_name" content="无敌包哥">
-<meta property="og:description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
-<meta property="og:updated_time" content="2016-02-03T08:12:03.000Z">
+<meta property="og:description" content="IntentIntent用于启动Activity, Service, 以及BroadcastReceiver三种组件, 同时还是组件之间通信的重要媒介.使用Intent启动组件的优势1, Intent为组件的启动提供了一致的编程模型. 无论想要启动的组件是Activity, Service, 还是BroadcastReceiver, 都可以使用Intent封装启动的意图.2, 在某些时候, 应用程">
+<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20141114/20141114090700109.png">
+<meta property="og:updated_time" content="2016-03-16T08:02:50.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016这些Android技术会很火">
-<meta name="twitter:description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
+<meta name="twitter:title" content="Intent和IntentFilter详解">
+<meta name="twitter:description" content="IntentIntent用于启动Activity, Service, 以及BroadcastReceiver三种组件, 同时还是组件之间通信的重要媒介.使用Intent启动组件的优势1, Intent为组件的启动提供了一致的编程模型. 无论想要启动的组件是Activity, Service, 还是BroadcastReceiver, 都可以使用Intent封装启动的意图.2, 在某些时候, 应用程">
+<meta name="twitter:image" content="http://www.2cto.com/uploadfile/Collfiles/20141114/20141114090700109.png">
   
     <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
   
@@ -242,11 +241,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-2016Android" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-framework-intent-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/03/2016Android/" class="article-date">
-  	<time datetime="2016-02-03T09:24:25.000Z" itemprop="datePublished">2016-02-03</time>
+      <a href="/2016/03/16/framework-intent-1/" class="article-date">
+  	<time datetime="2016-03-16T06:37:50.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -259,7 +258,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      2016这些Android技术会很火
+      Intent和IntentFilter详解
     </h1>
   
 
@@ -268,7 +267,7 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Intent/">Intent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
         
@@ -279,16 +278,20 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 2016，这些 Android 技术会很火 </strong></p>
-<p>在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。</p>
+        <h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><p>Intent用于启动Activity, Service, 以及BroadcastReceiver三种组件, 同时还是组件之间通信的重要媒介.<br>使用Intent启动组件的优势<br>1, Intent为组件的启动提供了一致的编程模型. 无论想要启动的组件是Activity, Service, 还是BroadcastReceiver, 都可以使用Intent封装启动的意图.<br>2, 在某些时候, 应用程序只是想启动具有某种特征的组件, 并不想和某个特定的组件耦合. 使用Intent可以方便的达到这种高层次解耦的目的.</p>
 <a id="more"></a>
-<h2 id="1、DataBinding"><a href="#1、DataBinding" class="headerlink" title="1、DataBinding"></a>1、DataBinding</h2><p>今年的 Google IO 大会上，Android 团队发布了一个数据绑定框架（Data Binding Library）。Data Binding Library 是一个 support 库，支持 Android 2.1+ 版本 (API level 7+)。<br>在2015年，它还是beta版本，但是就 Android Studio 2 的 Preview 版本发展来看，Google 在这个库上还是很花心思的，我们有理由相信，在2016年 DataBinding 将会迎来第一个正式版。</p>
-<h2 id="2、MVP模式"><a href="#2、MVP模式" class="headerlink" title="2、MVP模式"></a>2、MVP模式</h2><p>MVVM 与 MVP 模式，正在 Android 开发中越来越流行。在这里为大家强烈推荐我的：TheMVP 项目，可以直接引入项目作为 module 依赖。(详情请在 github 搜索 TheMVP )</p>
-<h2 id="3、热修复"><a href="#3、热修复" class="headerlink" title="3、热修复"></a>3、热修复</h2><p>在2015年，涌现出了一大批热修复动态加载技术：HotFix、Nuwa、DroidFix、AndFix 等等，以及同样原理的插件化技术：DroidPlugin、DynamicAPK。就连 Android  Studio 2 的 Preview 版本中体现的 Instant Run 功能，本质上也是一种热修复技术。<br>我猜想，在2016年一定会有基于 Instant Run 思想做出的热修复技术涌现。</p>
-<h2 id="4、RxJava"><a href="#4、RxJava" class="headerlink" title="4、RxJava"></a>4、RxJava</h2><p>优雅(也许仅体现在lambda表达式)的链式表达，轻松的线程切换，让 RxJava 在 2015 年已然得以如日中天。如果此时你还不了解 RxJava 究竟是什么的话，我建议你一定要仔细反思一下自己是否已与世界脱轨。</p>
-<h2 id="5、RxVolley"><a href="#5、RxVolley" class="headerlink" title="5、RxVolley"></a>5、RxVolley</h2><p>RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。 </p>
-<h2 id="6、RxBus、RxBinding"><a href="#6、RxBus、RxBinding" class="headerlink" title="6、RxBus、RxBinding"></a>6、RxBus、RxBinding</h2><p>得益于 RxJava 繁多的操作符与特性，结合此类基于 RxJava 的库，将使你的代码更加简洁，开发效率大大提高。<br>RxBus，值得一提的是 RxBus 并不是一个库，而是一种设计思维，它可以巧妙利用 RxJava 的特性，完美替换掉了原事件总线类库(EventBus/Otto等)<br>RxBinding，    RxJava 封装的 View 事件处理，事件的改变以流的形式进行传递。 </p>
-<h2 id="7、Kotlin-语言"><a href="#7、Kotlin-语言" class="headerlink" title="7、Kotlin 语言"></a>7、Kotlin 语言</h2><p>作为 Android 阵营的 Swift ，在2015年也迎来了它的正式版。Kotlin 拥有很多 Java 所不具备的特性， 比如空指针安全，函数默认参数，默认包含模板类，对 lambda 的原生支持(在 Android 开发中, 常常使用 RxKotlin )等特性。  </p>
+<h3 id="Intent的Component属性"><a href="#Intent的Component属性" class="headerlink" title="Intent的Component属性"></a>Intent的Component属性</h3><p>Intent对象的setComponent(ComponentName comp)方法用于设置Intent的Component属性. ComponentName包含如下几个构造器:<br>ComponentName(String pkg, String cls)<br>ComponentName(Context pkg, String cls)<br>ComponentName(Context pkg, Class&lt;?&gt; cls)<br>由以上的构造器可知, 创建一个ComponentName对象需要指定包名和类名–这就可以唯一确定一个组件类, 这样应用程序即可根据给定的组件类去启动特定的组件. 例如:<br>ComponentName comp = new ComponentName(FirstActivity.this, SecondActivity.class);<br>Intent intent = new Intent();<br>intent.setComponent(comp);<br>以上三句代码创建了一个intent对象, 并为其指定了Component属性, 完全等价于下面的代码:<br>Intent intent = new Intent(FirstActivity.this, SecondActivity.class);<br>除了使用setComponent() 之外, 还可以使用setClass(), setClassName()来显式指定目标组件, 还可以调用getComponent()方法获得Intent中封装的.</p>
+<h3 id="ComponentName对象"><a href="#ComponentName对象" class="headerlink" title="ComponentName对象"></a>ComponentName对象</h3><p>当程序采用这种形式启动组件时, 在Intent中明确的指定了待启动的组件类, 此时的Intent属于显式intent, 显式Intent应用场合比较狭窄, 多用于启动本应用中的component, 因为这种方式需要提前获知目标组件类的全限定名. 而隐式Intent则通过Intent中的action, category, data属性指定目标组件需要满足的若干条件, 系统筛选出满足所有条件的component, 从中选择最合适的component或者由用户选择一个component作为目标组件启动.如果Intent中指定了ComponentName属性, 则Intent的其他属性将被忽略.  </p>
+<h3 id="Intent的Action属性"><a href="#Intent的Action属性" class="headerlink" title="Intent的Action属性"></a>Intent的Action属性</h3><p>action属性是一个字符串, 代表某一种特定的动作.一般来说, 自定义的action应该以application的包名作为前缀, 然后附加特定的大写字符串, 例如”com.roobo.logcat.action.UPLOAD_BAO_ZI”.</p>
+<h3 id="Intent的Category属性"><a href="#Intent的Category属性" class="headerlink" title="Intent的Category属性"></a>Intent的Category属性</h3><p>category属性也是一个字符串, 用于指定一些目标组件需要满足的额外条件. Intent对象中可以包含任意多个category属性. Intent类也预定义了一些category常量, 开发者也可以自定义category属性.<br>Intent类的addCategory()方法为Intent添加Category属性, getCategories()方法用于获取Intent中封装的所有category.</p>
+<h3 id="Intent的Data属性"><a href="#Intent的Data属性" class="headerlink" title="Intent的Data属性"></a>Intent的Data属性</h3><p>data属性指定所操作数据的URI. data经常与action配合使用, 如果action为ACTION_EDIT, data的值应该指明被编辑文档的URI; 如果<br>action为ACTION_CALL, data的值应该是一个以”tel:”开头并在其后附加号码的URI; 如果action为ACTION_VIEW, data的值应该是一个以”http: “开头并在其后附加网址的URI…<br>Intent类的setData()方法用于设置data属性, setType()方法用于设置data的MIME类型, setDataAndType()方法可以同时设定两者. 可以通过getData()方法获取data属性的值, 通过getType()方法获取data的MIME类型.</p>
+<h3 id="Intent的Extra属性"><a href="#Intent的Extra属性" class="headerlink" title="Intent的Extra属性"></a>Intent的Extra属性</h3><p>通过Intent启动一个component时, 经常需要携带一些额外的数据过去. 携带数据需要调用Intent的putExtra()方法, 该方法存在多个重载方法, 可用于携带基本数据类型及其数组, String类型及其数组, Serializable类型及其数组, Parcelable类型及其数组, Bundle类型等. Serializable和Parcelable类型代表一个可序列化的对象<br>, Bundle与Map类似,可用于存储键值对.</p>
+<h3 id="Intent的Flag属性"><a href="#Intent的Flag属性" class="headerlink" title="Intent的Flag属性"></a>Intent的Flag属性</h3><p>flag属性是一个int值, 用于通知android系统如何启动目标activity, 或者启动目标activity之后应该采取怎样的后续操作. 所有的flag都在Intent类中定义, 部分常用flag如下:<br>FLAG_ACTIVITY_NEW_TASK–通知系统将目标activity作为一个新task的初始activity;<br>FLAG_ACTIVITY_NO_HISTORY–通知系统不要将目标activity放入历史栈中;<br>FLAG_FROM_BACKGROUND–通知系统这个Intent来源于后台操作, 而非用户的直接选择…</p>
+<h2 id="IntentFilter"><a href="#IntentFilter" class="headerlink" title="IntentFilter"></a>IntentFilter</h2><p>IntentFilter类表示Intent过滤器, 大部分情况下, 每一个component都会定义一个或多个IntentFilter, 用于表明其可处理的Intent.<br>一般来说, component的IntentFilter应该在AndroidManifest.xml文件中定义. </p>
+<h3 id="IntentFilter与隐式Intent"><a href="#IntentFilter与隐式Intent" class="headerlink" title="IntentFilter与隐式Intent"></a>IntentFilter与隐式Intent</h3><p>ndroid系统处理隐式Intent时, 会比较Intent和IntentFilter的action, data, category属性, 如果以上3个属性全都相符的话, 则IntentFilter所属的component就可以作为目标组件的候选(存在多个符合条件的component时). </p>
+<h3 id="Intent是如何实现组件间相互调用？"><a href="#Intent是如何实现组件间相互调用？" class="headerlink" title="Intent是如何实现组件间相互调用？"></a>Intent是如何实现组件间相互调用？</h3><p><img src="http://www.2cto.com/uploadfile/Collfiles/20141114/20141114090700109.png" alt=""><br>上图请求一个Activity组件的简单的实现流程图，算是用的最多的Intent解析实例。<br>首先，发出”意图”的组件，通过调用<code>Context.startActivity(intent)</code>开始启动组件：发出”意图”的组件传入已经构好的Intent对象(为一组信息，它决定了是否能够成功的启动另一个组件）.<br>然后，调用”动作”实际的执行着<code>Instrumentation</code>对象，它是整个应用激活的Activity管理者，集中负责应用内所有Activity的运行。它有一个隐藏的方法<code>execStartActivity</code>方法，就是负责根据Intent启动Activity。该方法去掉一些细节，它做得最重要的事情，就是将此调用，通过RPC(远程方法调用,AIDL)的方式，传递到<code>ActivityManagerService</code>。<br>最后，ActivityManagerService会将这些关键信息递交给另一个服务PackageManagerService，此服务掌握整个软件包及其各组件的信息，它会将传递过来的Intent，与已知的所有Intent Filters进行匹配。如果找到了，就把相关Component的信息通知回AcitivityManagerService，在这里，会完成启动Activity这个很多细节的事情。   </p>
+<h3 id="2-Intent匹配-到底发出”意图”的组件是如何找到所需的组件呢？"><a href="#2-Intent匹配-到底发出”意图”的组件是如何找到所需的组件呢？" class="headerlink" title="2.Intent匹配 到底发出”意图”的组件是如何找到所需的组件呢？"></a>2.Intent匹配 到底发出”意图”的组件是如何找到所需的组件呢？</h3><p>Intent Filters定义在AndroidMainFest.xml文件中，每一个Activity都会有一个元素，它包含了、等子元素。当我们的intent对象没有包含Component信息时，这种”意图”被称之为隐形”意图”。也就是说，”意图”没有指明具体要启动哪个组件以及完成什么样的动作。这时我们就需要通过Intent Filters中的子元素进行信息匹配，从而确定当前包含Intent Filters属性的Activity是不是我们要启动的那个(些)组件。即发送”意图”组件配置好intent对象，被启动组件实现Intent Filters属性，最后，发送组件会根据被启动组件AndroidMainFest.xml中的信息来确定它是不是目标组件。 </p>
+<p><strong> PS:如果带有Component信息，就不用比了.可以通过我们的自身的定义的RooboPackageManager 通过解析AndroidManifest.xml IntentFilter 或者 meta-data 收集这些响应指定场景的组件， 由 RooboPackageManager 统一管理。 这样我们在调用组件的时候，可以通过显示调用的方式启动，通过这样的方式能减少查询，匹配。</strong></p>
 
       
     </div>
@@ -298,18 +301,18 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/02/03/RxJava-RxJava-5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/16/framework-activity-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          给 Android 开发者的 RxJava 详解
+          Activity和ActivityService与ActivityManager
         
       </div>
     </a>
   
   
-    <a href="/2016/02/03/RxJava-RxJava-4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入浅出RxJava四-在Android中使用响应式编程（译）</div>
+    <a href="/2016/03/14/framework-android-framework-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android Framework</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,7 +341,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016Android" data-title="2016这些Android技术会很火" data-url="http://wdbaoge.com/2016/02/03/2016Android/"></div>
+	<div class="ds-thread" data-thread-key="framework-intent-1" data-title="Intent和IntentFilter详解" data-url="http://wdbaoge.com/2016/03/16/framework-intent-1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

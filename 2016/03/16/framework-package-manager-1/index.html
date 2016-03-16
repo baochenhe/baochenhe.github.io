@@ -6,21 +6,21 @@
 
   
  
-  <title>2016这些Android技术会很火 | 无敌包哥</title>
+  <title>PackageManager 与 PackageManagerService | 无敌包哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
+  <meta name="description" content="PackageManager框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016这些Android技术会很火">
-<meta property="og:url" content="http://wdbaoge.com/2016/02/03/2016Android/index.html">
+<meta property="og:title" content="PackageManager 与 PackageManagerService">
+<meta property="og:url" content="http://wdbaoge.com/2016/03/16/framework-package-manager-1/index.html">
 <meta property="og:site_name" content="无敌包哥">
-<meta property="og:description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
-<meta property="og:updated_time" content="2016-02-03T08:12:03.000Z">
+<meta property="og:description" content="PackageManager框架">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201107/7/0_1310047324MnnZ.gif">
+<meta property="og:image" content="http://jbcdn2.b0.upaiyun.com/2014/05/27fed95f6ceaf41f6492171ee3f742f3-1024x770.jpg">
+<meta property="og:updated_time" content="2016-03-16T08:42:33.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016这些Android技术会很火">
-<meta name="twitter:description" content="2016，这些 Android 技术会很火 
-在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。">
+<meta name="twitter:title" content="PackageManager 与 PackageManagerService">
+<meta name="twitter:description" content="PackageManager框架">
+<meta name="twitter:image" content="http://hi.csdn.net/attachment/201107/7/0_1310047324MnnZ.gif">
   
     <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
   
@@ -242,11 +242,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-2016Android" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-framework-package-manager-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/03/2016Android/" class="article-date">
-  	<time datetime="2016-02-03T09:24:25.000Z" itemprop="datePublished">2016-02-03</time>
+      <a href="/2016/03/16/framework-package-manager-1/" class="article-date">
+  	<time datetime="2016-03-16T08:37:50.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      2016这些Android技术会很火
+      PackageManager 与 PackageManagerService
     </h1>
   
 
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PackageManger/">PackageManger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
         
@@ -279,16 +279,31 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 2016，这些 Android 技术会很火 </strong></p>
-<p>在Android开发中，新技术不断涌现。对于GitHub上如此众多的项目，有人不断Mark，有人分享自己的经验，不管怎么样，如果能让你真的有所学习有所收获，我们的目的也就达到了。感谢开源实验室的分享。</p>
+        <h2 id="PackageManager框架"><a href="#PackageManager框架" class="headerlink" title="PackageManager框架"></a>PackageManager框架</h2><p><img src="http://hi.csdn.net/attachment/201107/7/0_1310047324MnnZ.gif" alt="">   </p>
 <a id="more"></a>
-<h2 id="1、DataBinding"><a href="#1、DataBinding" class="headerlink" title="1、DataBinding"></a>1、DataBinding</h2><p>今年的 Google IO 大会上，Android 团队发布了一个数据绑定框架（Data Binding Library）。Data Binding Library 是一个 support 库，支持 Android 2.1+ 版本 (API level 7+)。<br>在2015年，它还是beta版本，但是就 Android Studio 2 的 Preview 版本发展来看，Google 在这个库上还是很花心思的，我们有理由相信，在2016年 DataBinding 将会迎来第一个正式版。</p>
-<h2 id="2、MVP模式"><a href="#2、MVP模式" class="headerlink" title="2、MVP模式"></a>2、MVP模式</h2><p>MVVM 与 MVP 模式，正在 Android 开发中越来越流行。在这里为大家强烈推荐我的：TheMVP 项目，可以直接引入项目作为 module 依赖。(详情请在 github 搜索 TheMVP )</p>
-<h2 id="3、热修复"><a href="#3、热修复" class="headerlink" title="3、热修复"></a>3、热修复</h2><p>在2015年，涌现出了一大批热修复动态加载技术：HotFix、Nuwa、DroidFix、AndFix 等等，以及同样原理的插件化技术：DroidPlugin、DynamicAPK。就连 Android  Studio 2 的 Preview 版本中体现的 Instant Run 功能，本质上也是一种热修复技术。<br>我猜想，在2016年一定会有基于 Instant Run 思想做出的热修复技术涌现。</p>
-<h2 id="4、RxJava"><a href="#4、RxJava" class="headerlink" title="4、RxJava"></a>4、RxJava</h2><p>优雅(也许仅体现在lambda表达式)的链式表达，轻松的线程切换，让 RxJava 在 2015 年已然得以如日中天。如果此时你还不了解 RxJava 究竟是什么的话，我建议你一定要仔细反思一下自己是否已与世界脱轨。</p>
-<h2 id="5、RxVolley"><a href="#5、RxVolley" class="headerlink" title="5、RxVolley"></a>5、RxVolley</h2><p>RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。 </p>
-<h2 id="6、RxBus、RxBinding"><a href="#6、RxBus、RxBinding" class="headerlink" title="6、RxBus、RxBinding"></a>6、RxBus、RxBinding</h2><p>得益于 RxJava 繁多的操作符与特性，结合此类基于 RxJava 的库，将使你的代码更加简洁，开发效率大大提高。<br>RxBus，值得一提的是 RxBus 并不是一个库，而是一种设计思维，它可以巧妙利用 RxJava 的特性，完美替换掉了原事件总线类库(EventBus/Otto等)<br>RxBinding，    RxJava 封装的 View 事件处理，事件的改变以流的形式进行传递。 </p>
-<h2 id="7、Kotlin-语言"><a href="#7、Kotlin-语言" class="headerlink" title="7、Kotlin 语言"></a>7、Kotlin 语言</h2><p>作为 Android 阵营的 Swift ，在2015年也迎来了它的正式版。Kotlin 拥有很多 Java 所不具备的特性， 比如空指针安全，函数默认参数，默认包含模板类，对 lambda 的原生支持(在 Android 开发中, 常常使用 RxKotlin )等特性。  </p>
+<p>大部分情况我们是在Activity中使用getPackageManager方法获取一个ApplicationPackageManager的对象，ApplicationPackageManager实际上是包装了一个IPackageManager.Stub.Proxy的对象<br>由IPackageManager.Stub.Proxy代理执行PackageManager相关操作，IPackageManager.Stub.Proxy实际代理的是PackageManagerService.</p>
+<p>再来重新理一下：<br>首先是IPackageManager是通过IPackageManager.aidl文件生成，同时生成了存根类IPackageManager.Stub，代理类：IPackageManager.Stub.Proxy这个是packageManager进程通信的基本框架 然后PackageManagerService，它继承了IPackageManager.Stub,它作为PackageManager动作的实际执行者，在system_process中存在.<br>再是我们用户应用程序中的ApplicationPackageManager,先看它如何被获取的：<br><code>ContextImpl.java</code>中有一个方法：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function">PackageManager <span class="title">getPackageManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mPackageManager != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> mPackageManager;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    IPackageManager pm = ActivityThread.getPackageManager();</span><br><span class="line">    <span class="keyword">if</span> (pm != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// Doesn't matter if we make more than one instance.</span></span><br><span class="line">        <span class="keyword">return</span> (mPackageManager = <span class="keyword">new</span> ApplicationPackageManager(<span class="keyword">this</span>, pm));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>ApplicationPackageManager</code>实际上是包装了一个<code>IPackageManager</code>对象(IPackageManager.Stub.Proxy),当我们调用<code>queryIntentActivities</code>时，实际通过代理对象去执行：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;ResolveInfo&gt; <span class="title">queryIntentActivities</span>(<span class="params">Intent intent,</span><br><span class="line">            <span class="keyword">int</span> flags</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mPM.queryIntentActivities(<span class="comment">//mPM是IPackageManager.Stub.Proxy对象</span></span><br><span class="line">                intent,</span><br><span class="line">                intent.resolveTypeIfNeeded(mContext.getContentResolver()),</span><br><span class="line">                flags);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Package manager has died"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>经过进程通信，在PackageManagerService执行对应操作。</p>
+<h3 id="PackageManagerService的构建与获取"><a href="#PackageManagerService的构建与获取" class="headerlink" title="PackageManagerService的构建与获取"></a>PackageManagerService的构建与获取</h3><p>PackageManagerService的构建：在system_process进程加载时，PackageManagerService被构建，在SystemServer.ServerThread.run中有如下一段代码，它就是加载  <code>PackageManagerService</code>的：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Slog.i(TAG, <span class="string">"Package Manager"</span>)<span class="comment">;</span></span><br><span class="line">pm = PackageManagerService.main(<span class="built_in">context</span>,</span><br><span class="line">        factoryTest != SystemServer.FACTORY_TEST_OFF)<span class="comment">;//启动PackageManagerService</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> PackageManagerService </strong><br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="function">IPackageManager <span class="title">main</span><span class="params">(Context context, <span class="keyword">boolean</span> factoryTest)</span> </span>&#123;</span><br><span class="line">        PackageManagerService m = <span class="keyword">new</span> PackageManagerService(context, factoryTest);</span><br><span class="line">        ServiceManager.addService(<span class="string">"package"</span>, m);</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>PackageManagerService获取:<br>先看前面在ContextImpl.java-&gt;getPackagerManager中：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IPackageManager pm = ActivityThread.getPackageManager()<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> ActivityThread </strong><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static IPackageManager getPackageManager() &#123;</span><br><span class="line">       <span class="keyword">if</span> (sPackageManager != null) &#123;</span><br><span class="line">           <span class="regexp">//</span>Slog.v(<span class="string">"PackageManager"</span>, <span class="string">"returning cur default = "</span> + sPackageManager);</span><br><span class="line">           <span class="keyword">return</span> sPackageManager;</span><br><span class="line">       &#125;</span><br><span class="line">       IBinder b = ServiceManager.getService(<span class="string">"package"</span>);</span><br><span class="line">       <span class="regexp">//</span>Slog.v(<span class="string">"PackageManager"</span>, <span class="string">"default service binder = "</span> + b);</span><br><span class="line">       sPackageManager = IPackageManager.Stub.asInterface(b);</span><br><span class="line">       <span class="regexp">//</span>Slog.v(<span class="string">"PackageManager"</span>, <span class="string">"default service = "</span> + sPackageManager);</span><br><span class="line">       <span class="keyword">return</span> sPackageManager;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>奇怪的是，我打开下到的源码中 ServiceManager 里面的方法实现细节是看不到的。 可以引用的时候 又是静态引用的实在有点费解。</p>
+<h2 id="APK文件安装过程的细节"><a href="#APK文件安装过程的细节" class="headerlink" title="APK文件安装过程的细节"></a>APK文件安装过程的细节</h2><p>下面的过程执行在Package Manger服务中。</p>
+<ul>
+<li>等待；  </li>
+<li>添加一个包文件到安装进程的队列中；  </li>
+<li>确定合适的地方来安装包文件；  </li>
+<li>复制apk文件到一个给定的目录下；  </li>
+<li>确定应用的UID；  </li>
+<li>请求installd守护程序进程；  </li>
+<li>创建应用目录和设置权限；  </li>
+<li>提取dex代码到缓存目录中；  </li>
+<li>解析packages.list、system、data和packages.xml的最新状态；  </li>
+<li>向系统发送广播消息，消息带有安装完成效果的名字Intent.ACTION_PACKAGE_ADDED：如果是更新，会带有新的（Intent.ACTION_PACKAGE_REPLACED）。</li>
+</ul>
+<p><img src="http://jbcdn2.b0.upaiyun.com/2014/05/27fed95f6ceaf41f6492171ee3f742f3-1024x770.jpg" alt=""></p>
 
       
     </div>
@@ -298,18 +313,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/02/03/RxJava-RxJava-5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          给 Android 开发者的 RxJava 详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/03/RxJava-RxJava-4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入浅出RxJava四-在Android中使用响应式编程（译）</div>
+    <a href="/2016/03/16/framework-activity-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Activity和ActivityService与ActivityManager</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,7 +344,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016Android" data-title="2016这些Android技术会很火" data-url="http://wdbaoge.com/2016/02/03/2016Android/"></div>
+	<div class="ds-thread" data-thread-key="framework-package-manager-1" data-title="PackageManager 与 PackageManagerService" data-url="http://wdbaoge.com/2016/03/16/framework-package-manager-1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
