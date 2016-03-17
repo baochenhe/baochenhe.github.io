@@ -6,17 +6,18 @@
 
   
  
-  <title>Tag: Fresco | 无敌包哥</title>
+  <title>Android 中自定义权限 | 无敌包哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bruce sha&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="无敌包哥">
-<meta property="og:url" content="http://wdbaoge.com/tags/Fresco/index.html">
+  <meta name="description" content="自定义权限结构1234567&amp;lt;permission android:description=&quot;string resource&quot;              android:icon=&quot;drawable resource&quot;              android:label=&quot;string resource&quot;              android:name=&quot;string&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 中自定义权限">
+<meta property="og:url" content="http://wdbaoge.com/2016/03/17/framework-permission-1/index.html">
 <meta property="og:site_name" content="无敌包哥">
-<meta property="og:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta property="og:description" content="自定义权限结构1234567&amp;lt;permission android:description=&quot;string resource&quot;              android:icon=&quot;drawable resource&quot;              android:label=&quot;string resource&quot;              android:name=&quot;string&quot;">
+<meta property="og:updated_time" content="2016-03-17T02:30:55.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无敌包哥">
-<meta name="twitter:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="Android 中自定义权限">
+<meta name="twitter:description" content="自定义权限结构1234567&amp;lt;permission android:description=&quot;string resource&quot;              android:icon=&quot;drawable resource&quot;              android:label=&quot;string resource&quot;              android:name=&quot;string&quot;">
   
     <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
   
@@ -238,53 +239,107 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-framework-permission-1" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/05/Fresco-Fresco-gif/" class="archive-article-date">
-  	<time datetime="2016-01-05T09:46:06.000Z" itemprop="datePublished">1月 5</time>
+    <div class="article-meta">
+      <a href="/2016/03/17/framework-permission-1/" class="article-date">
+  	<time datetime="2016-03-17T02:23:50.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/05/Fresco-Fresco-gif/">Fresco gif 本地 and 网络 加载</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 中自定义权限
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fresco/">Fresco</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gif/">gif</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/权限/">权限</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="自定义权限结构"><a href="#自定义权限结构" class="headerlink" title="自定义权限结构"></a>自定义权限结构</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;permission android:description=<span class="string">"string resource"</span>  </span><br><span class="line">            android:icon=<span class="string">"drawable resource"</span>  </span><br><span class="line">            android:label=<span class="string">"string resource"</span>  </span><br><span class="line">            android:name=<span class="string">"string"</span>  </span><br><span class="line">            android:permissionGroup=<span class="string">"string"</span>  </span><br><span class="line">            android:protectionLevel=[<span class="string">"normal"</span> <span class="string">| "</span>dangerous<span class="string">" |   </span></span><br><span class="line">                                     <span class="string">"signature"</span> <span class="string">| "</span>signatureOrSystem<span class="string">"] /&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="属性解析"><a href="#属性解析" class="headerlink" title="属性解析"></a>属性解析</h2><p>android:description :对权限的描述，一般是两句话，第一句话描述这个权限所针对的操作，第二句话告诉用户授予app这个权限会带来的后果<br>android:label: 对权限的一个简短描述<br>android:name :权限的唯一标识，一般都是使用 报名加权限名<br>android:permissionGroup: 权限所属权限组的名称<br>android:protectionLevel: 权限的等级，<br>normal 是最低的等级，声明次权限的app，系统会默认授予次权限，不会提示用户<br>dangerous  权限对应的操作有安全风险，系统在安装声明此类权限的app时会提示用户<br>signature  权限表明的操作只针对使用同一个证书签名的app开放<br>signatureOrSystem  与signature类似，只是增加了rom中自带的app的声明   </p>
+<p><strong> android:name 属性是必须的，其他的可选，未写的系统会指定默认值  *</strong></p>
+<h2 id="呆摸"><a href="#呆摸" class="headerlink" title="呆摸"></a>呆摸</h2><h3 id="1、权限的声明-APP1"><a href="#1、权限的声明-APP1" class="headerlink" title="1、权限的声明(APP1)"></a>1、权限的声明(APP1)</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">permission</span> <span class="attr">android:name</span>=<span class="string">"com.xxx.permission"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">receiver</span> </span><br><span class="line">   <span class="attr">android:name</span>=<span class="string">"com.example.demo1"</span>  </span><br><span class="line">        <span class="attr">android:permission</span>=<span class="string">"com.xxx.permission"</span> &gt;</span>  </span><br><span class="line">   <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span>  </span><br><span class="line">     <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"com.test.action"</span> /&gt;</span>  </span><br><span class="line">     <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span>  </span><br><span class="line"> <span class="tag">&lt;/<span class="name">receiver</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">activity</span>  </span><br><span class="line">            <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>  </span><br><span class="line">            <span class="attr">android:label</span>=<span class="string">"@string/title_activity_main"</span>  </span><br><span class="line">            <span class="attr">android:permission</span>=<span class="string">"com.xxx.permission"</span> &gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span>  </span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span>  </span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、权限的使用-APP2"><a href="#2、权限的使用-APP2" class="headerlink" title="2、权限的使用(APP2)"></a>2、权限的使用(APP2)</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:<span class="built_in">name</span>=<span class="string">"com.xxx.permission"</span> /&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/framework-package-manager-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PackageManager 与 PackageManagerService</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="framework-permission-1" data-title="Android 中自定义权限" data-url="http://wdbaoge.com/2016/03/17/framework-permission-1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -316,9 +371,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true
 	}
