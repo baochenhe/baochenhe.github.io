@@ -6,17 +6,21 @@
 
   
  
-  <title>Tag: android | 无敌包哥</title>
+  <title>Linux,Android 句柄是什么 ？ | 无敌包哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bruce sha&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="无敌包哥">
-<meta property="og:url" content="http://wdbaoge.com/tags/android/page/3/index.html">
+  <meta name="description" content="1.句柄就是一个标识符，只要获得对象的句柄，我们就可以对对象进行任意的操作。
+2.句柄不是指针，操作系统用句柄可以找到一块内存，这个句柄可能是标识符，map的key，也可能是指针，看操作系统怎么处理的了。fd算是在某种程度上替代句柄吧；Linux 有相应机制，但没有统一的句柄类型，各种类型的系统资源由各自的类型来标识，由各自的接口操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux,Android 句柄是什么 ？">
+<meta property="og:url" content="http://wdbaoge.com/2016/03/18/framework-handle-1/index.html">
 <meta property="og:site_name" content="无敌包哥">
-<meta property="og:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta property="og:description" content="1.句柄就是一个标识符，只要获得对象的句柄，我们就可以对对象进行任意的操作。
+2.句柄不是指针，操作系统用句柄可以找到一块内存，这个句柄可能是标识符，map的key，也可能是指针，看操作系统怎么处理的了。fd算是在某种程度上替代句柄吧；Linux 有相应机制，但没有统一的句柄类型，各种类型的系统资源由各自的类型来标识，由各自的接口操作。">
+<meta property="og:updated_time" content="2016-03-18T06:45:37.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无敌包哥">
-<meta name="twitter:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="Linux,Android 句柄是什么 ？">
+<meta name="twitter:description" content="1.句柄就是一个标识符，只要获得对象的句柄，我们就可以对对象进行任意的操作。
+2.句柄不是指针，操作系统用句柄可以找到一块内存，这个句柄可能是标识符，map的key，也可能是指针，看操作系统怎么处理的了。fd算是在某种程度上替代句柄吧；Linux 有相应机制，但没有统一的句柄类型，各种类型的系统资源由各自的类型来标识，由各自的接口操作。">
   
     <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
   
@@ -238,88 +242,108 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-framework-handle-1" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/27/material-design-2015-11-27-material-design/" class="archive-article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">11月 27</time>
+    <div class="article-meta">
+      <a href="/2016/03/18/framework-handle-1/" class="article-date">
+  	<time datetime="2016-03-18T06:37:50.000Z" itemprop="datePublished">2016-03-18</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/27/material-design-2015-11-27-material-design/">Android(Lollipop/5.0) Material Design(一) 简介</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux,Android 句柄是什么 ？
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handle/">Handle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/句柄/">句柄</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/27/material-design-2015-11-30-material-design-中文版/" class="archive-article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">11月 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/27/material-design-2015-11-30-material-design-中文版/">Android Material Design中文版</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.句柄就是一个标识符，只要获得对象的句柄，我们就可以对对象进行任意的操作。</p>
+<p>2.句柄不是指针，操作系统用句柄可以找到一块内存，这个句柄可能是标识符，map的key，也可能是指针，看操作系统怎么处理的了。<br>fd算是在某种程度上替代句柄吧；<br>Linux 有相应机制，但没有统一的句柄类型，各种类型的系统资源由各自的类型来标识，由各自的接口操作。<br><a id="more"></a><br>3.在操作系统层面上，文件操作也有类似于FILE的一个概念，在Linux里，这叫做文件描述符(File Descriptor)，而在Windows里，叫做句柄(Handle)(以下在没有歧义的时候统称为句柄)。用户通过某个函数打开文件以获得句柄，此 后用户操纵文件皆通过该句柄进行。</p>
+<p>设计这么一个句柄的原因在于句柄可以防止用户随意读写操作系统内核的文件对象。无论是Linux还是Windows，文件句柄总是和内核的文件对象相关联的，但如何关联细节用户并不可见。内核可以通过句柄来计算出内核里文件对象的地址，但此能力并不对用户开放。</p>
+<p>下面举一个实际的例子，在Linux中，值为0、1、2的fd分别代表标准输入、标准输出和标准错误输出。在程序中打开文件得到的fd从3开始增长。 fd具体是什么呢?在内核中，每一个进程都有一个私有的“打开文件表”，这个表是一个指针数组，每一个元素都指向一个内核的打开文件对象。而fd，就是这 个表的下标。当用户打开一个文件时，内核会在内部生成一个打开文件对象，并在这个表里找到一个空项，让这一项指向生成的打开文件对象，并返回这一项的下标 作为fd。由于这个表处于内核，并且用户无法访问到，因此用户即使拥有fd，也无法得到打开文件对象的地址，只能够通过系统提供的函数来操作。</p>
+<p>在C语言里，操纵文件的渠道则是FILE结构，不难想象，C语言中的FILE结构必定和fd有一对一的关系，每个FILE结构都会记录自己唯一对应的fd。</p>
+<p><strong> 句柄 </strong><br>在程序设计 中,句柄是一种特殊的智能指针 。当一个应用程序 要引用其他系统(如数据库、操作系统 )所管理的内存 块或对象 时，就要使用句柄。<br>句柄与普通指针 的区别在于，指针包含的是引用对象 的内存地址 ，而句柄则是由系统所管理的引用标识，该标识可以被系统重新定位到一个内存地址 上。这种间接访问对象 的模式增强了系统对引用对象 的控制。（参见封装 )。<br>在上世纪80年代的操作系统（如Mac OS 和Windows ）的内存管理 中，句柄被广泛应用。Unix 系统的文件描述符 基本上也属于句柄。和其它桌面环境 一样，Windows API 大量使用句柄来标识系统中的对象 ，并建立操作系统与用户空间 之间的通信渠道。例如，桌面上的一个窗体由一个HWND 类型的句柄来标识。<br>如今，内存 容量的增大和虚拟内存 算法使得更简单的指针 愈加受到青睐，而指向另一指针的那类句柄受到冷淡。尽管如此，许多操作系统 仍然把指向私有对象 的指针以及进程传递给客户端 的内部数组 下标称为句柄。</p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/17/framework-permission-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 中自定义权限</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/android/page/2/">&laquo; Prev</a><a class="page-number" href="/tags/android/">1</a><a class="page-number" href="/tags/android/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="framework-handle-1" data-title="Linux,Android 句柄是什么 ？" data-url="http://wdbaoge.com/2016/03/18/framework-handle-1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -351,9 +375,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true
 	}

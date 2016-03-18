@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ActivityManager/" style="font-size: 10px;">ActivityManager</a> <a href="/tags/ActivityService/" style="font-size: 10px;">ActivityService</a> <a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/Intent/" style="font-size: 10px;">Intent</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/PackageManger/" style="font-size: 10px;">PackageManger</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
+						<a href="/tags/ActivityManager/" style="font-size: 10px;">ActivityManager</a> <a href="/tags/ActivityService/" style="font-size: 10px;">ActivityService</a> <a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/Handle/" style="font-size: 10px;">Handle</a> <a href="/tags/Intent/" style="font-size: 10px;">Intent</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/PackageManger/" style="font-size: 10px;">PackageManger</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/句柄/" style="font-size: 10px;">句柄</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -239,6 +239,67 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-material-design-android-制作粒子爆炸特效" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/material-design-android-制作粒子爆炸特效/" class="article-date">
+  	<time datetime="2015-12-29T01:48:14.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/29/material-design-android-制作粒子爆炸特效/">Android制作粒子爆炸特效</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在闲逛的时候，发现了一款粒子爆炸特效的控件，觉得比较有意思，效果也不错。<br>但是代码不好扩展，也就是说如果要提供不同的爆炸效果，需要修改的地方比较多。于是我对源代码进行了一些重构，将爆炸流程和粒子运动分离。<br>对于源码，大家可以参考以下链接<br><a href="https://github.com/tyrantgit/ExplosionField">链接1 https://github.com/tyrantgit/ExplosionField</a><br><a href="http://www.itlanbao.com/code/20151121/11557/100655.html">链接2 http://www.itlanbao.com/code/20151121/11557/100655.html</a></p>
+<p>上面两套代码，其实结构都是一样的，但是实现的效果不同(其实就是粒子运动的算法不同)。<br>本篇文章，将给大家介绍粒子爆炸特效的实现方式，替大家理清实现思路。</p>
+<p>实现效果如下： </p>
+<p><img src="http://img.blog.csdn.net/20151202143834990" alt=""></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/29/material-design-android-制作粒子爆炸特效/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-material-design-2015-12-02-RecyclerView" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -499,6 +560,69 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-随笔-2015-11-27-统计" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/28/随笔-2015-11-27-统计/" class="article-date">
+  	<time datetime="2015-11-28T06:26:06.000Z" itemprop="datePublished">2015-11-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/28/随笔-2015-11-27-统计/">hexo yilia主题统计</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a>添加百度统计</h1><p>因Google Analytics偶尔被墙，故用百度统计，介绍如何添加。<br>编辑文件hexo\themes\yilia_config.yml，修改配置选项：</p>
+<pre><code>google_analytics: &apos;&apos; 
+</code></pre><p>修改为：</p>
+<pre><code>baidu_analytics: true 
+</code></pre><p>其实就是把默认的谷歌统计换成百度统计，我有强迫症所以我会做麻烦些。</p>
+<h2 id="注册百度账号"><a href="#注册百度账号" class="headerlink" title="注册百度账号"></a>注册百度账号</h2><p>然后子去百度注册一个百度统计，百度页面统计这个会有一个段统计代码</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/11/28/随笔-2015-11-27-统计/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-theme-modify" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -560,11 +684,11 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-随笔-2015-11-27-统计" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-随笔-2015-11-27-随笔" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/28/随笔-2015-11-27-统计/" class="article-date">
-  	<time datetime="2015-11-28T06:26:06.000Z" itemprop="datePublished">2015-11-28</time>
+      <a href="/2015/11/27/随笔-2015-11-27-随笔/" class="article-date">
+  	<time datetime="2015-11-27T07:53:36.000Z" itemprop="datePublished">2015-11-27</time>
 </a>
     </div>
   
@@ -577,7 +701,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/28/随笔-2015-11-27-统计/">hexo yilia主题统计</a>
+      <a class="article-title" href="/2015/11/27/随笔-2015-11-27-随笔/">随笔</a>
     </h1>
   
 
@@ -586,12 +710,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a>添加百度统计</h1><p>因Google Analytics偶尔被墙，故用百度统计，介绍如何添加。<br>编辑文件hexo\themes\yilia_config.yml，修改配置选项：</p>
-<pre><code>google_analytics: &apos;&apos; 
-</code></pre><p>修改为：</p>
-<pre><code>baidu_analytics: true 
-</code></pre><p>其实就是把默认的谷歌统计换成百度统计，我有强迫症所以我会做麻烦些。</p>
-<h2 id="注册百度账号"><a href="#注册百度账号" class="headerlink" title="注册百度账号"></a>注册百度账号</h2><p>然后子去百度注册一个百度统计，百度页面统计这个会有一个段统计代码</p>
+        <h1 id="如你所见"><a href="#如你所见" class="headerlink" title="如你所见"></a>如你所见</h1><p>是的如你所见，我就是随笔写了一笔！</p>
+
       
     </div>
     
@@ -599,15 +719,11 @@ var _hmt = _hmt || [];
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/28/随笔-2015-11-27-统计/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -682,61 +798,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-随笔-2015-11-27-随笔" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/27/随笔-2015-11-27-随笔/" class="article-date">
-  	<time datetime="2015-11-27T07:53:36.000Z" itemprop="datePublished">2015-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/27/随笔-2015-11-27-随笔/">随笔</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="如你所见"><a href="#如你所见" class="headerlink" title="如你所见"></a>如你所见</h1><p>是的如你所见，我就是随笔写了一笔！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-material-design-2015-11-30-material-design-中文版" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -784,66 +845,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2015/11/27/material-design-2015-11-30-material-design-中文版/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-material-design-2015-11-27-material-design" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/27/material-design-2015-11-27-material-design/" class="article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">2015-11-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/27/material-design-2015-11-27-material-design/">Android(Lollipop/5.0) Material Design(一) 简介</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>查看官网地址：<a href="https://developer.android.com/design/material/index.html" title="android Material Design官网地址">https://developer.android.com/design/material/index.html</a><br>使用Material Design 需要api21，即Lollipop/5.0以上<br>Material Design 为应用提供了：一个新的主题，一些组合View的新Widget，一些自定义阴影和动画的新Api</p>
-<h2 id="Material-主题"><a href="#Material-主题" class="headerlink" title="Material 主题"></a>Material 主题</h2><p>在manifest.xml 中<br><code>&lt;... android:theme=&quot;@android:style/Theme.Material&quot; &gt;</code><br><strong>提示一下有很多相关的主题</strong></p>
-<p><img src="http://img.blog.csdn.net/20150706103209088?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="使用主题示例"></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/27/material-design-2015-11-27-material-design/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

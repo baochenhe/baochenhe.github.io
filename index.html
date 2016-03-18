@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ActivityManager/" style="font-size: 10px;">ActivityManager</a> <a href="/tags/ActivityService/" style="font-size: 10px;">ActivityService</a> <a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/Intent/" style="font-size: 10px;">Intent</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/PackageManger/" style="font-size: 10px;">PackageManger</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
+						<a href="/tags/ActivityManager/" style="font-size: 10px;">ActivityManager</a> <a href="/tags/ActivityService/" style="font-size: 10px;">ActivityService</a> <a href="/tags/Fresco/" style="font-size: 10px;">Fresco</a> <a href="/tags/Handle/" style="font-size: 10px;">Handle</a> <a href="/tags/Intent/" style="font-size: 10px;">Intent</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/PackageManger/" style="font-size: 10px;">PackageManger</a> <a href="/tags/RxAndroid/" style="font-size: 11.67px;">RxAndroid</a> <a href="/tags/RxVolley/" style="font-size: 10px;">RxVolley</a> <a href="/tags/Rxjava/" style="font-size: 18.33px;">Rxjava</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android6-0/" style="font-size: 10px;">android6.0</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/gradle/" style="font-size: 11.67px;">gradle</a> <a href="/tags/lollipop/" style="font-size: 13.33px;">lollipop</a> <a href="/tags/materialDesign/" style="font-size: 13.33px;">materialDesign</a> <a href="/tags/mvp/" style="font-size: 10px;">mvp</a> <a href="/tags/roobo/" style="font-size: 11.67px;">roobo</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/句柄/" style="font-size: 10px;">句柄</a> <a href="/tags/教程/" style="font-size: 13.33px;">教程</a> <a href="/tags/文档/" style="font-size: 10px;">文档</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/棉花糖/" style="font-size: 10px;">棉花糖</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/译/" style="font-size: 15px;">译</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -239,6 +239,65 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-framework-handle-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/18/framework-handle-1/" class="article-date">
+  	<time datetime="2016-03-18T06:37:50.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/18/framework-handle-1/">Linux,Android 句柄是什么 ？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.句柄就是一个标识符，只要获得对象的句柄，我们就可以对对象进行任意的操作。</p>
+<p>2.句柄不是指针，操作系统用句柄可以找到一块内存，这个句柄可能是标识符，map的key，也可能是指针，看操作系统怎么处理的了。<br>fd算是在某种程度上替代句柄吧；<br>Linux 有相应机制，但没有统一的句柄类型，各种类型的系统资源由各自的类型来标识，由各自的接口操作。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handle/">Handle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/句柄/">句柄</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/18/framework-handle-1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-framework-permission-1" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -771,65 +830,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/02/04/DesignPattern-mvc-mvp-mvvm/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-RxJava-RxJava-6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/03/RxJava-RxJava-6/" class="article-date">
-  	<time datetime="2016-02-03T11:24:25.000Z" itemprop="datePublished">2016-02-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/03/RxJava-RxJava-6/">RxVolley使用指南</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="RxVolley使用指南"><a href="#RxVolley使用指南" class="headerlink" title="RxVolley使用指南"></a>RxVolley使用指南</h2><p>RxVolley，让 Volley 支持了 RxJava 后，让你的代码很轻松的脱离了回调地狱。同时移除掉了复杂的 HttpClient ，以及可选支持 OkHttp 与 ImageLoader，让你使用自己习惯编码风格的同时极大缩减了项目体积。</p>
-<p>RxVolley 项目地址： <a href="https://github.com/kymjs/RxVolley">https://github.com/kymjs/RxVolley</a></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxAndroid/">RxAndroid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxVolley/">RxVolley</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文档/">文档</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/03/RxJava-RxJava-6/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
