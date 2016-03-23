@@ -6,17 +6,23 @@
 
   
  
-  <title>Tag: lollipop | 无敌包哥</title>
+  <title>Android framework学习杂记-info | 无敌包哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bruce sha&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="无敌包哥">
-<meta property="og:url" content="http://wdbaoge.com/tags/lollipop/index.html">
+  <meta name="description" content="声明这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。
+各种 info PackageItemInfo  本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。ApplicationInfo  这个类，怎么来说呢，我们可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android framework学习杂记-info">
+<meta property="og:url" content="http://wdbaoge.com/2016/03/17/framework-zj-1/index.html">
 <meta property="og:site_name" content="无敌包哥">
-<meta property="og:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta property="og:description" content="声明这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。
+各种 info PackageItemInfo  本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。ApplicationInfo  这个类，怎么来说呢，我们可">
+<meta property="og:image" content="http://7xopmn.com1.z0.glb.clouddn.com/androidframeworkpackageItemInfo_1.png">
+<meta property="og:updated_time" content="2016-03-23T09:40:22.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无敌包哥">
-<meta name="twitter:description" content="bruce sha&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="Android framework学习杂记-info">
+<meta name="twitter:description" content="声明这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。
+各种 info PackageItemInfo  本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。ApplicationInfo  这个类，怎么来说呢，我们可">
+<meta name="twitter:image" content="http://7xopmn.com1.z0.glb.clouddn.com/androidframeworkpackageItemInfo_1.png">
   
     <link rel="alternative" href="/atom.xml" title="无敌包哥" type="application/atom+xml">
   
@@ -238,115 +244,125 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-framework-zj-1" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/03/17/framework-zj-1/" class="article-date">
+  	<time datetime="2016-03-17T03:55:50.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android framework学习杂记-info
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/16/material-design-2015-12-02-RecyclerView/" class="archive-article-date">
-  	<time datetime="2015-12-16T03:35:13.000Z" itemprop="datePublished">12月 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/16/material-design-2015-12-02-RecyclerView/">Android RecyclerView 使用心得记录</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。</p>
+<h2 id="各种-info"><a href="#各种-info" class="headerlink" title="各种 info"></a>各种 info</h2><p><img src="http://7xopmn.com1.z0.glb.clouddn.com/androidframeworkpackageItemInfo_1.png" alt=""><br><strong> PackageItemInfo </strong> 本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。<br>ApplicationInfo  这个类，怎么来说呢，我们可以为自己的程序指定一个Application ，这个类就是记录你指定的那个Application的信息。还有的就是 <application></application> 这对标签包含了我们所有的组件，所以这个类记录这个APP的整体信息， 主题 ，源码路径…<br>resourceDirs ,  dataDir , nativeLibraryDir ,不好概括，不过你看到这个几个属性，应该能大体明白他的定位。<br>PermissionInfo 权限信息的记录，还有权限的级别保护。 Android用啥都需要申请权限，但是你的级别不够，有些权限不是你写了申请就能够获取到的。    </p>
+<a id="more"></a>
+<p>PermissionGroupInfo 没看明白他是干嘛</p>
+<p>InstrumentationInfo 里面的内容 感觉跟ApplicationInfo 类似</p>
+<p>ComponentInfo  组件信息。  其实我看到这个 我感觉有点奇怪 不是说四大组件吗。逗我呢。。。 我最爱的BroadcastReceiver 到哪里去了。。ActivityInfo , ServiceInfo , ProviderInfo  这三者都比 ComponentInfo 统一多出一个属性， 那就是Permission , 对应到我们使用应该就是每一个组件，都可以定一个使用权限，其中 ProviderInfo 是为了要更加具体一些，分读取 和 写入权限。</p>
+<p>PS: 上述的这个几个INFO 基本都可以理解信息的实体类。</p>
+<p><strong> PackageInfo </strong>   整个包的一些信息， 包括权限， 开出来的进程 ， 还包含有一个 ApplicationInfo</p>
+<p><strong> ResolveInfo </strong>  组件信息封装</p>
+<p><strong> com.android.server.pm.Settings </strong> 记录包解析的数据</p>
+<p><strong> IntentResolver </strong>  public abstract class IntentResolver<f extends="" intentfilter,="" r="" object="">  定义了IntentFilter 的匹配规则。</f></p>
+<p><strong> PackageManagerService </strong><br>scanPackageLI方法   开始检索包中的组件</p>
+<p><strong> PackageParser </strong> parsePackage()  方法，开始解析包配置文件， 获取到里面的 activities , receivers ,providers,services</p>
+<p>   未完待续 。。。</p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/27/material-design-2015-11-27-material-design/" class="archive-article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">11月 27</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/27/material-design-2015-11-27-material-design/">Android(Lollipop/5.0) Material Design(一) 简介</a>
-    </h1>
+    <a href="/2016/03/18/framework-handle-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Linux,Android 句柄是什么 ？
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/03/17/framework-permission-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 中自定义权限</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/27/material-design-2015-11-30-material-design-中文版/" class="archive-article-date">
-  	<time datetime="2015-11-27T05:21:42.000Z" itemprop="datePublished">11月 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/27/material-design-2015-11-30-material-design-中文版/">Android Material Design中文版</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lollipop/">lollipop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/materialDesign/">materialDesign</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="framework-zj-1" data-title="Android framework学习杂记-info" data-url="http://wdbaoge.com/2016/03/17/framework-zj-1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wdbaoge"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -378,9 +394,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true
 	}
