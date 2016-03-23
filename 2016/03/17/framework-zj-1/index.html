@@ -17,7 +17,7 @@
 <meta property="og:description" content="声明这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。
 各种 info PackageItemInfo  本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。ApplicationInfo  这个类，怎么来说呢，我们可">
 <meta property="og:image" content="http://7xopmn.com1.z0.glb.clouddn.com/androidframeworkpackageItemInfo_1.png">
-<meta property="og:updated_time" content="2016-03-23T09:40:22.110Z">
+<meta property="og:updated_time" content="2016-03-23T09:47:49.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android framework学习杂记-info">
 <meta name="twitter:description" content="声明这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。
@@ -284,9 +284,9 @@ var _hmt = _hmt || [];
         <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>这是一篇杂记。随便写的。我学习的目标是为了弄清楚Android组件解析，匹配，运行，管理这一套机制。 我也不不懂哪些信息会是能用到的消息，故写此文做记录。</p>
 <h2 id="各种-info"><a href="#各种-info" class="headerlink" title="各种 info"></a>各种 info</h2><p><img src="http://7xopmn.com1.z0.glb.clouddn.com/androidframeworkpackageItemInfo_1.png" alt=""><br><strong> PackageItemInfo </strong> 本身只是一个基类，提供一些基本的信息，name ,pakcageName,metaData 等基础信息，真正参与工作的是他的子类。<br>ApplicationInfo  这个类，怎么来说呢，我们可以为自己的程序指定一个Application ，这个类就是记录你指定的那个Application的信息。还有的就是 <application></application> 这对标签包含了我们所有的组件，所以这个类记录这个APP的整体信息， 主题 ，源码路径…<br>resourceDirs ,  dataDir , nativeLibraryDir ,不好概括，不过你看到这个几个属性，应该能大体明白他的定位。<br>PermissionInfo 权限信息的记录，还有权限的级别保护。 Android用啥都需要申请权限，但是你的级别不够，有些权限不是你写了申请就能够获取到的。    </p>
 <a id="more"></a>
-<p>PermissionGroupInfo 没看明白他是干嘛</p>
-<p>InstrumentationInfo 里面的内容 感觉跟ApplicationInfo 类似</p>
-<p>ComponentInfo  组件信息。  其实我看到这个 我感觉有点奇怪 不是说四大组件吗。逗我呢。。。 我最爱的BroadcastReceiver 到哪里去了。。ActivityInfo , ServiceInfo , ProviderInfo  这三者都比 ComponentInfo 统一多出一个属性， 那就是Permission , 对应到我们使用应该就是每一个组件，都可以定一个使用权限，其中 ProviderInfo 是为了要更加具体一些，分读取 和 写入权限。</p>
+<p><strong> PermissionGroupInfo </strong> 没看明白他是干嘛</p>
+<p><strong> InstrumentationInfo </strong> 里面的内容 感觉跟ApplicationInfo 类似</p>
+<p><strong> ComponentInfo </strong>  组件信息。  其实我看到这个 我感觉有点奇怪 不是说四大组件吗。逗我呢。。。 我最爱的BroadcastReceiver 到哪里去了。。ActivityInfo , ServiceInfo , ProviderInfo  这三者都比 ComponentInfo 统一多出一个属性， 那就是Permission , 对应到我们使用应该就是每一个组件，都可以定一个使用权限，其中 ProviderInfo 是为了要更加具体一些，分读取 和 写入权限。</p>
 <p>PS: 上述的这个几个INFO 基本都可以理解信息的实体类。</p>
 <p><strong> PackageInfo </strong>   整个包的一些信息， 包括权限， 开出来的进程 ， 还包含有一个 ApplicationInfo</p>
 <p><strong> ResolveInfo </strong>  组件信息封装</p>
